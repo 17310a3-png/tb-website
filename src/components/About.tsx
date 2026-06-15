@@ -5,11 +5,11 @@ export default function About() {
     <section id="about">
       <Reveal className="about-photos" y={0}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/about/main.jpg" loading="lazy" alt="統包先生完工實景空間" className="about-photo-main" />
+        <img src="/assets/about/main.jpg" loading="lazy" alt="統包先生施工團隊形象合照" className="about-photo-main" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/assets/about/sub.jpg" loading="lazy" alt="統包先生住宅裝修作品" className="about-photo-sub" />
         <div className="about-photo-caption">
-          統包先生<br />品牌實績
+          統包先生<br />核心團隊
         </div>
       </Reveal>
 

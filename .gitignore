@@ -29,3 +29,6 @@ yarn-error.log*
 
 # design reference (大圖原稿，不進部署)
 /design-reference/
+
+# 原始素材（不進部署）
+/其他/
