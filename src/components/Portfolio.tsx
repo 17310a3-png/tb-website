@@ -71,6 +71,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
               <div style={{ width: 3, height: 20, background: 'var(--yellow)' }} />
               <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.78rem', color: 'var(--yellow)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>More Projects</span>
               <span style={{ fontSize: '0.85rem', color: 'var(--light-gray)' }}>更多完工案例</span>
+              <span style={{ marginLeft: 'auto', fontSize: '0.78rem', color: 'var(--gray)', whiteSpace: 'nowrap' }}>← 左右滑動看更多 →</span>
             </div>
           </Reveal>
           <PortfolioGrid projects={rest} />

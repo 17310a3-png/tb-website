@@ -1461,3 +1461,47 @@
   margin-top: 14px;
   text-align: center;
 }
+
+/* ── 作品集 橫向捲動 ── */
+.proj-scroll-wrap { position: relative; }
+.proj-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--yellow) var(--border);
+}
+.proj-scroll::-webkit-scrollbar { height: 6px; }
+.proj-scroll::-webkit-scrollbar-track { background: var(--border); }
+.proj-scroll::-webkit-scrollbar-thumb { background: var(--yellow); }
+.proj-scroll .proj-card {
+  flex: 0 0 auto;
+  width: 340px;
+  aspect-ratio: 4/3;
+  scroll-snap-align: start;
+}
+@media (max-width: 640px) {
+  .proj-scroll .proj-card { width: 80vw; }
+}
+.proj-arrow {
+  position: absolute;
+  top: calc(50% - 8px);
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 48px; height: 48px;
+  background: rgba(22,21,20,0.85);
+  border: 1px solid var(--border-bright);
+  color: var(--yellow);
+  font-size: 1.9rem; line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+.proj-arrow:hover { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+.proj-arrow-left { left: -12px; }
+.proj-arrow-right { right: -12px; }
+@media (max-width: 900px) { .proj-arrow { display: none; } }

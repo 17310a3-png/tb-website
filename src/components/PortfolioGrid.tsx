@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Project } from '@/lib/projects';
 
 export default function PortfolioGrid({ projects }: { projects: Project[] }) {
   const [active, setActive] = useState<Project | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setActive(null);
@@ -17,28 +18,41 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
     };
   }, [active]);
 
+  const scrollByCards = (dir: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>('.proj-card');
+    const step = card ? card.offsetWidth + 16 : 340;
+    el.scrollBy({ left: dir * step * 2, behavior: 'smooth' });
+  };
+
   return (
     <>
-      <div className="proj-grid">
-        {projects.map((p, i) => (
-          <motion.button
-            type="button"
-            className="proj-card"
-            key={p.id}
-            onClick={() => setActive(p)}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '0px 0px -40px 0px' }}
-            transition={{ duration: 0.6, delay: (i % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.cover_url} loading="lazy" alt={p.name} />
-            <div className="proj-overlay">
-              <span className="proj-type">{p.category}</span>
-              <span className="proj-name">{p.name}</span>
-            </div>
-          </motion.button>
-        ))}
+      <div className="proj-scroll-wrap">
+        <button type="button" className="proj-arrow proj-arrow-left" aria-label="上一個" onClick={() => scrollByCards(-1)}>‹</button>
+        <button type="button" className="proj-arrow proj-arrow-right" aria-label="下一個" onClick={() => scrollByCards(1)}>›</button>
+
+        <div className="proj-scroll" ref={trackRef}>
+          {projects.map((p, i) => (
+            <motion.button
+              type="button"
+              className="proj-card"
+              key={p.id}
+              onClick={() => setActive(p)}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '0px 0px -40px 0px' }}
+              transition={{ duration: 0.5, delay: Math.min(i, 6) * 0.06, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={p.cover_url} loading="lazy" alt={p.name} />
+              <div className="proj-overlay">
+                <span className="proj-type">{p.category}</span>
+                <span className="proj-name">{p.name}</span>
+              </div>
+            </motion.button>
+          ))}
+        </div>
       </div>
 
       <AnimatePresence>
@@ -63,7 +77,9 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
                 <div>
                   <span className="proj-type">{active.category}</span>
                   <h3 className="pf-modal-title">{active.name}</h3>
-                  {active.location && <span className="pf-modal-meta">{active.location}{active.style ? ` · ${active.style}` : ''}</span>}
+                  {active.location && active.location !== '—' && (
+                    <span className="pf-modal-meta">{active.location}{active.style ? ` · ${active.style}` : ''}</span>
+                  )}
                 </div>
                 <button type="button" className="pf-modal-close" onClick={() => setActive(null)} aria-label="關閉">×</button>
               </div>
