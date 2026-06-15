@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     description: '住宅裝修整合服務品牌。透明流程、專業分工、安心交付。',
     images: ['/assets/og-image.jpg'],
   },
+  verification: {
+    google: 'FsJqkETDMlGZNGcLd-bLi9GKg0f0ZUGmroBQ1-Wog5o',
+  },
 };
 
 export const viewport: Viewport = {
