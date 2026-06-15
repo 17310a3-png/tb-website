@@ -12,7 +12,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # NEXT_PUBLIC_* 需在 build 時 inline 進前端 bundle（皆為可公開的 publishable 值）
 ARG NEXT_PUBLIC_SUPABASE_URL=https://obgobetnlecbmypvfnsq.supabase.co
 ARG NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_yxXv8UbQkE5CNZNFpeq4qg_26E7jmfw
-ARG NEXT_PUBLIC_SITE_URL=https://tb-website.zeabur.app
+ARG NEXT_PUBLIC_SITE_URL=https://www.mrturnkey.com.tw
 ARG NEXT_PUBLIC_LINE_URL=
 ENV NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL \
     NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY \
