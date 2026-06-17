@@ -7,7 +7,7 @@ const BRAND_LINKS: [string, string][] = [
   ['#locations', '門市據點'],
   ['#faq', '常見問題'],
 ];
-const STORE_LINKS = ['新北市五股店', '台北市東門店', '桃園慈文店', '台中烏日店'];
+const STORE_LINKS = ['新北市五股店', '台北市東門店', '新北市板橋店', '新竹市光復店', '桃園慈文店', '桃園龜山店', '台中烏日店', '台中水南店'];
 
 export default function Footer() {
   return (
