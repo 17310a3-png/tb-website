@@ -64,7 +64,7 @@
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | publishable key（前端讀作品集用） |
 | `SUPABASE_SERVICE_KEY` | service key（後端寫 inquiries，`sb_secret_*` 新格式） |
 | `NEXT_PUBLIC_SITE_URL` | 正式網域（SEO / canonical 用），已設 `https://mrturnkey.com.tw` |
-| `NEXT_PUBLIC_LINE_URL` | ⏳ **待設**：官網 LINE 浮動按鈕的連結，設了 `FloatCta` 才會顯示 |
+| `NEXT_PUBLIC_LINE_URL` | 🚫 **刻意留空、不要填**：官網一律導向 `#contact` 的 SurveyCake 預約表單（`surveycake.com/s/Ad81e`）。客戶填單後才由表單流程加入官方 LINE。若填了 lin.ee 直接加好友連結，會讓客人繞過表單 → 跳過 n8n 區域分流 + tb-cases 收單，客源資料與路由都會遺失。`FloatCta` 與 `Contact` 的 LINE 按鈕在此值為空時自動隱藏（正確行為）。 |
 
 ## ⚠️ 部署雷（重要）
 
