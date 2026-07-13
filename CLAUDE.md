@@ -66,9 +66,9 @@
 | `NEXT_PUBLIC_SITE_URL` | 正式網域（SEO / canonical 用），已設 `https://mrturnkey.com.tw` |
 | `NEXT_PUBLIC_LINE_URL` | 🚫 **刻意留空、不要填**：官網一律導向 `#contact` 的 SurveyCake 預約表單（`surveycake.com/s/Ad81e`）。客戶填單後才由表單流程加入官方 LINE。若填了 lin.ee 直接加好友連結，會讓客人繞過表單 → 跳過 n8n 區域分流 + tb-cases 收單，客源資料與路由都會遺失。`FloatCta` 與 `Contact` 的 LINE 按鈕在此值為空時自動隱藏（正確行為）。 |
 
-## ⚠️ 部署雷（重要）
+## 部署（auto-deploy 已通 ✓）
 
-**這個 service 是用 Zeabur MCP 建的，沒有綁 GitHub auto-deploy webhook** —— `git push` 後不會自動重建，要手動到 Zeabur dashboard 觸發 redeploy。若要修掉這個雷：到 tb-website service → Git 設定重新連 `17310a3-png/tb-website`。
+~~曾記載「MCP 建的 service 無 webhook、push 後要手動重建」~~ → **2026-07-13 稽核實證已解除**：push 後 5 秒內自動觸發部署（實證：commit `7e9ef51` 16:33:40 → 部署 16:33:45）。現在 `git push` 即自動部署，與其他子系統相同。詳見母 `docs/ZEABUR_AUDIT_2026-07-13.md`。
 
 ## 開發指令
 
