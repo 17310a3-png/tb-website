@@ -16,7 +16,11 @@ export default function Contact() {
           </p>
           {LINE_URL && (
             <a className="contact-line-cta" href={LINE_URL} target="_blank" rel="noopener noreferrer">
-              <div className="line-icon">💬</div>
+              <div className="line-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" focusable="false">
+                  <path d="M12 3C6.477 3 2 6.847 2 11.594c0 2.73 1.487 5.16 3.797 6.73-.09.85-.395 2.087-1.006 3.02-.16.245.05.56.335.49 1.9-.46 3.42-1.34 4.376-2.03.8.157 1.636.24 2.498.24 5.523 0 10-3.846 10-8.593S17.523 3 12 3z" />
+                </svg>
+              </div>
               <div className="contact-line-cta-text">
                 <h4>加入官方 LINE 立即洽詢</h4>
                 <p>最快速的諮詢方式，回覆迅速</p>

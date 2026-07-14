@@ -383,7 +383,7 @@
 
   .strip-label {
     font-size: 0.72rem;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.72); /* WCAG AA：對品牌黃 #F9B91B 約 6.9:1（0.6 時僅 ~4.x:1，小字貼線） */
     letter-spacing: 0.1em;
     font-weight: 500;
     text-align: center;
@@ -753,7 +753,7 @@
 
   .why-brand-sub {
     font-size: 0.88rem;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.72); /* WCAG AA：對品牌黃 #F9B91B 約 6.9:1 */
     line-height: 1.85;
   }
 
@@ -861,6 +861,10 @@
     transition: background 0.2s;
   }
   .location-badge:hover { background: var(--yellow-dark); }
+  .location-badge:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 3px; /* 黃 ring 與黃底 badge 之間留 gap，靠深色卡片底襯出 */
+  }
 
   /* ── FAQ ── */
   #faq {
@@ -1047,7 +1051,7 @@
   }
   .contact-line-cta:hover { background: #05a847; }
 
-  .contact-line-cta .line-icon { font-size: 1.6rem; }
+  .contact-line-cta .line-icon { display: flex; align-items: center; flex-shrink: 0; }
 
   .contact-line-cta-text h4 {
     font-size: 0.95rem;
