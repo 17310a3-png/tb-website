@@ -1,6 +1,6 @@
 /* 統包先生 MR.TURNKEY — 全站樣式（品牌色 黃#F9B91B + 黑#1C1B1B）
-   字體用 next/font 載入，見 layout.tsx；此處保留 font-family 名稱 */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&display=swap");
+   字體用 next/font/google 自 host 載入（見 layout.tsx），以 CSS 變數引用：
+   --font-noto-tc / --font-bebas / --font-barlow */
 
   :root {
     --yellow: #F9B91B;
@@ -13,7 +13,7 @@
     --mid: #302E2B;
     --border: #34322E;
     --border-bright: #46433D;
-    --gray: #8a857d;
+    --gray: #948f87; /* WCAG AA：對 --dark #232220 為 4.9:1（原 #8a857d 僅 4.3:1） */
     --light-gray: #b3ada4;
     --white: #F4F0E8;
     --white-pure: #ffffff;
@@ -25,7 +25,7 @@
   body {
     background: var(--black);
     color: var(--white);
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-weight: 300;
     line-height: 1.7;
     overflow-x: hidden;
@@ -48,7 +48,7 @@
     text-decoration: none;
     display: inline-block;
     transition: all 0.25s;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
   }
   .btn-yellow:hover {
@@ -66,7 +66,7 @@
     text-decoration: none;
     display: inline-block;
     transition: all 0.25s;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-weight: 500;
   }
   .btn-outline:hover {
@@ -111,7 +111,7 @@
   }
 
   .nav-logo-cn {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-weight: 900;
     font-size: 1.05rem;
     color: var(--white);
@@ -120,7 +120,7 @@
   }
 
   .nav-logo-en {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-weight: 600;
     font-size: 0.7rem;
     color: var(--yellow);
@@ -158,10 +158,19 @@
   .nav-cta:hover { background: var(--yellow-dark) !important; color: var(--black) !important; }
 
   .hamburger {
+    /* <button> reset */
+    background: none;
+    border: none;
     display: none;
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
+    padding: 12px 8px; /* 觸控目標 ≥44px */
+    margin: -12px -8px;
+  }
+  .hamburger:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
   }
   .hamburger span {
     display: block;
@@ -262,7 +271,7 @@
   }
 
   .hero-eyebrow-text {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.85rem;
     color: var(--yellow);
     letter-spacing: 0.4em;
@@ -271,7 +280,7 @@
   }
 
   .hero-title {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-size: clamp(3rem, 7vw, 6.5rem);
     font-weight: 900;
     line-height: 1.08;
@@ -286,11 +295,11 @@
   }
 
   .hero-subtitle {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: clamp(1.8rem, 4vw, 3.6rem);
     font-weight: 600;
     letter-spacing: 0.06em;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.72); /* WCAG AA：原 0.35 對 --black 僅 ~2.6:1 */
     margin-bottom: 36px;
     line-height: 1;
     text-transform: uppercase;
@@ -320,7 +329,7 @@
   }
 
   .hero-scroll-text {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.7rem;
     color: var(--gray);
     letter-spacing: 0.3em;
@@ -365,7 +374,7 @@
   .strip-item:last-child { border-right: none; }
 
   .strip-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
     font-size: 2.6rem;
     color: var(--black);
     line-height: 1;
@@ -397,7 +406,7 @@
     flex-shrink: 0;
   }
   .eyebrow-text {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.8rem;
     color: var(--yellow);
     letter-spacing: 0.35em;
@@ -406,7 +415,7 @@
   }
 
   .section-title {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 3rem);
     font-weight: 900;
     line-height: 1.25;
@@ -464,7 +473,7 @@
     justify-content: center;
     background: var(--yellow);
     color: var(--black);
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -546,15 +555,17 @@
     content: '';
     position: absolute;
     bottom: 0; left: 0;
-    width: 0; height: 3px;
+    width: 100%; height: 3px;
     background: var(--yellow);
-    transition: width 0.35s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
   }
-  .service-card:hover::after { width: 100%; }
+  .service-card:hover::after { transform: scaleX(1); }
   .service-card:hover { background: rgba(249,185,27,0.025); }
 
   .service-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
     font-size: 3.5rem;
     color: rgba(249,185,27,0.08);
     line-height: 1;
@@ -579,7 +590,7 @@
   .service-tag {
     display: inline-block;
     margin-top: 20px;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.7rem;
     color: var(--yellow);
     letter-spacing: 0.25em;
@@ -603,7 +614,7 @@
     right: -2%;
     top: 50%;
     transform: translateY(-50%);
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
     font-size: 22vw;
     color: rgba(249,185,27,0.025);
     line-height: 1;
@@ -637,7 +648,7 @@
   .process-card:hover { background: rgba(249,185,27,0.03); }
 
   .process-card-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
     font-size: 4rem;
     color: var(--yellow);
     line-height: 1;
@@ -698,7 +709,7 @@
   .why-item:hover { padding-left: 8px; }
 
   .why-num {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
     font-size: 1.4rem;
     color: var(--yellow);
     line-height: 1.2;
@@ -731,7 +742,7 @@
   }
 
   .why-brand-title {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-weight: 900;
     font-size: 1.6rem;
     color: var(--black);
@@ -757,7 +768,7 @@
   }
 
   .why-vision-label {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.72rem;
     color: var(--yellow);
     letter-spacing: 0.3em;
@@ -873,6 +884,12 @@
   .faq-item { border-bottom: 1px solid var(--border); }
 
   .faq-q {
+    /* <button> reset */
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
     padding: 22px 0;
     font-size: 0.95rem;
     font-weight: 500;
@@ -887,6 +904,11 @@
     user-select: none;
   }
   .faq-q:hover { color: var(--yellow); }
+  .faq-q:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
+    color: var(--yellow);
+  }
 
   .faq-icon {
     width: 22px; height: 22px;
@@ -908,18 +930,23 @@
     transform: rotate(45deg);
   }
 
+  /* grid-rows 展開：不截斷長答案、transition 不觸發 reflow 抖動 */
   .faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
   }
   .faq-a-inner {
-    padding: 0 0 24px;
+    overflow: hidden;
+    min-height: 0;
+    padding: 0;
+    transition: padding 0.4s ease;
     font-size: 0.88rem;
     color: var(--gray);
     line-height: 1.9;
   }
-  .faq-item.open .faq-a { max-height: 240px; }
+  .faq-item.open .faq-a { grid-template-rows: 1fr; }
+  .faq-item.open .faq-a-inner { padding: 0 0 24px; }
 
   /* ── MARQUEE ── */
   #marquee-section {
@@ -945,7 +972,7 @@
   }
 
   .marquee-item span {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-size: 0.88rem;
     font-weight: 700;
     color: var(--black);
@@ -993,7 +1020,7 @@
   .contact-left {}
 
   .contact-tagline {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-size: 1.6rem;
     font-weight: 900;
     color: var(--white-pure);
@@ -1050,7 +1077,7 @@
   .form-group { display: flex; flex-direction: column; gap: 7px; }
 
   .form-label {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.72rem;
     color: var(--yellow);
     letter-spacing: 0.25em;
@@ -1064,7 +1091,7 @@
     color: var(--white);
     padding: 12px 16px;
     font-size: 0.88rem;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-weight: 300;
     transition: all 0.25s;
     outline: none;
@@ -1106,7 +1133,7 @@
   .footer-logo-text { display: flex; flex-direction: column; }
 
   .footer-brand-cn {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
     font-weight: 900;
     font-size: 1.15rem;
     color: var(--white-pure);
@@ -1114,7 +1141,7 @@
     line-height: 1.1;
   }
   .footer-brand-en {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.68rem;
     color: var(--yellow);
     letter-spacing: 0.35em;
@@ -1131,7 +1158,7 @@
   }
 
   .footer-col-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.72rem;
     color: var(--yellow);
     letter-spacing: 0.3em;
@@ -1206,6 +1233,8 @@
   .float-consult {
     background: var(--yellow);
     color: var(--black);
+    min-height: 44px; /* 觸控目標 WCAG 2.5.8 */
+    align-items: center;
     padding: 12px 20px;
     font-size: 0.78rem;
     font-weight: 700;
@@ -1216,7 +1245,7 @@
     clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
     white-space: nowrap;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
   }
   .float-consult:hover { transform: scale(1.04); }
 
@@ -1251,7 +1280,7 @@
     background: linear-gradient(to top, rgba(12,11,10,0.86) 0%, rgba(12,11,10,0.15) 50%, transparent 100%);
   }
   .proj-type {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
     font-size: 0.68rem;
     color: var(--yellow);
     letter-spacing: 0.22em;
@@ -1268,17 +1297,17 @@
     content: '';
     position: absolute;
     bottom: 0; left: 0;
-    width: 0; height: 3px;
+    width: 100%; height: 3px;
     background: var(--yellow);
-    transition: width 0.4s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
   }
-  .proj-card:hover::after { width: 100%; }
+  .proj-card:hover::after { transform: scaleX(1); }
 
-  /* ── ANIMATIONS ── */
-  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-  .fade-in { opacity: 0; transition: opacity 0.75s ease; }
-  .fade-in.visible { opacity: 1; }
+  /* ── ANIMATIONS ──
+     （舊 .fade-up / .fade-in IntersectionObserver 類別已移除：無 JS 時會讓內容永久隱形，
+       進場動畫現由 framer-motion <Reveal> 處理） */
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1100px) {
@@ -1363,7 +1392,7 @@
   gap: 20px;
 }
 .pf-modal-title {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
   font-weight: 900;
   font-size: 1.7rem;
   color: var(--white-pure);
@@ -1414,7 +1443,7 @@
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
 }
 .contact-survey-title {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: var(--font-noto-tc), 'Noto Sans TC', sans-serif;
   font-weight: 900;
   font-size: 1.6rem;
   color: var(--white-pure);
@@ -1505,3 +1534,17 @@
 .proj-arrow-left { left: -12px; }
 .proj-arrow-right { right: -12px; }
 @media (max-width: 900px) { .proj-arrow { display: none; } }
+
+/* ── prefers-reduced-motion：全站動畫降級（WCAG 2.3.3）──
+   framer-motion 部分由 layout 的 <MotionConfig reducedMotion="user"> 處理 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track { animation: none; } /* 跑馬燈停格（顯示前半段內容） */
+  .hero-scroll-line { animation: none; }
+}

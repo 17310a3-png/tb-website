@@ -1,5 +1,28 @@
 import type { Metadata, Viewport } from 'next';
+import { Noto_Sans_TC, Bebas_Neue, Barlow_Condensed } from 'next/font/google';
+import MotionProvider from '@/components/MotionProvider';
 import './globals.css';
+
+const notoSansTC = Noto_Sans_TC({
+  weight: ['300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-noto-tc',
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bebas',
+});
+
+const barlowCondensed = Barlow_Condensed({
+  weight: ['400', '600', '700', '800'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-barlow',
+});
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://tb-website.zeabur.app';
 
@@ -67,9 +90,13 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-TW">
+    <html lang="zh-TW" className={`${notoSansTC.variable} ${bebasNeue.variable} ${barlowCondensed.variable}`}>
       <body>
-        {children}
+        {/* 無 JS 時 framer-motion 的 SSR 初始 opacity:0 會讓內容隱形，noscript 強制可見 */}
+        <noscript>
+          <style>{`[style*="opacity:0"], [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; } .hero-bg-logo { opacity: 0.05 !important; }`}</style>
+        </noscript>
+        <MotionProvider>{children}</MotionProvider>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>

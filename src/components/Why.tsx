@@ -29,7 +29,7 @@ export default function Why() {
         <Reveal className="why-right">
           <div className="why-brand-block">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo/mark-black.png" alt="統包先生" className="why-brand-logo" />
+            <img src="/assets/logo/mark-black.png" alt="統包先生" className="why-brand-logo" width={300} height={300} loading="lazy" />
             <div className="why-brand-title">把複雜交給我們，<br />把安心留給你。</div>
             <p className="why-brand-sub">
               統包先生希望成為全台最值得信任的連鎖室內裝修品牌，讓每一位客戶在有裝修需求時，第一個想到的，就是統包先生。

@@ -25,7 +25,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
           <Reveal>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
               <div style={{ width: 3, height: 20, background: 'var(--yellow)' }} />
-              <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.78rem', color: 'var(--yellow)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>Featured Case</span>
+              <span style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.78rem', color: 'var(--yellow)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>Featured Case</span>
               <span style={{ fontSize: '0.85rem', color: 'var(--light-gray)' }}>{featured.name}{featured.style ? `｜${featured.style}` : ''}</span>
             </div>
           </Reveal>
@@ -56,7 +56,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
               <SpecCell label="STYLE" value={featured.style ?? '—'} />
               <SpecCell label="LOCATION" value={featured.location ?? '—'} />
               <div style={{ background: 'var(--near-black)', padding: '24px 28px' }}>
-                <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.7rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 8, fontWeight: 600 }}>CONTACT</div>
+                <div style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.7rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 8, fontWeight: 600 }}>CONTACT</div>
                 <a href="#contact" style={{ fontSize: '0.9rem', color: 'var(--yellow)', fontWeight: 700, textDecoration: 'none' }}>想做類似風格 →</a>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
           <Reveal>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '72px 0 28px' }}>
               <div style={{ width: 3, height: 20, background: 'var(--yellow)' }} />
-              <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.78rem', color: 'var(--yellow)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>More Projects</span>
+              <span style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.78rem', color: 'var(--yellow)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>More Projects</span>
               <span style={{ fontSize: '0.85rem', color: 'var(--light-gray)' }}>更多完工案例</span>
               <span style={{ marginLeft: 'auto', fontSize: '0.78rem', color: 'var(--gray)', whiteSpace: 'nowrap' }}>← 左右滑動看更多 →</span>
             </div>
@@ -94,7 +94,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
 function SpecCell({ label, value }: { label: string; value: string }) {
   return (
     <div style={{ background: 'var(--near-black)', padding: '24px 28px' }}>
-      <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.7rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 8, fontWeight: 600 }}>{label}</div>
+      <div style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.7rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 8, fontWeight: 600 }}>{label}</div>
       <div style={{ fontSize: '0.9rem', color: 'var(--white-pure)', fontWeight: 700 }}>{value}</div>
     </div>
   );

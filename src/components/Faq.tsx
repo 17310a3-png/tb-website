@@ -35,11 +35,17 @@ export default function Faq() {
         <Reveal className="faq-list">
           {FAQS.map(([q, a], i) => (
             <div className={`faq-item${open === i ? ' open' : ''}`} key={i}>
-              <div className="faq-q" onClick={() => setOpen(open === i ? null : i)}>
+              <button
+                type="button"
+                className="faq-q"
+                aria-expanded={open === i}
+                aria-controls={`faq-answer-${i}`}
+                onClick={() => setOpen(open === i ? null : i)}
+              >
                 <span>{q}</span>
-                <div className="faq-icon">+</div>
-              </div>
-              <div className="faq-a">
+                <span className="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div className="faq-a" id={`faq-answer-${i}`}>
                 <div className="faq-a-inner">{a}</div>
               </div>
             </div>

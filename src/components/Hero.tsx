@@ -16,6 +16,8 @@ export default function Hero() {
       <motion.img
         src="/assets/logo/mark-white.png"
         alt=""
+        width={300}
+        height={300}
         className="hero-bg-logo"
         aria-hidden="true"
         initial={{ opacity: 0, scale: 1.08 }}

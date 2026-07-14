@@ -28,7 +28,7 @@ export default function Nav() {
       <nav id="main-nav" className={scrolled ? 'scrolled' : ''}>
         <a href="#hero" className="nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo/mark-white.png" alt="統包先生 Logo" className="nav-logo-icon" />
+          <img src="/assets/logo/mark-white.png" alt="統包先生 Logo" className="nav-logo-icon" width={300} height={300} />
           <span className="nav-logo-text">
             <span className="nav-logo-cn">統包先生</span>
             <span className="nav-logo-en">MR.TURNKEY</span>
@@ -44,12 +44,19 @@ export default function Nav() {
             <a href="#contact" className="nav-cta">預約諮詢</a>
           </li>
         </ul>
-        <div className="hamburger" onClick={() => setOpen((v) => !v)} aria-label="選單">
+        <button
+          type="button"
+          className="hamburger"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? '關閉選單' : '開啟選單'}
+        >
           <span /><span /><span />
-        </div>
+        </button>
       </nav>
 
-      <div className={`mobile-menu${open ? ' open' : ''}`}>
+      <div id="mobile-menu" className={`mobile-menu${open ? ' open' : ''}`}>
         {LINKS.map(([href, label]) => (
           <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
         ))}

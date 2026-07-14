@@ -16,7 +16,7 @@ export default function Footer() {
         <div>
           <div className="footer-logo-wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo/mark-white.png" alt="統包先生" className="footer-logo-img" />
+            <img src="/assets/logo/mark-white.png" alt="統包先生" className="footer-logo-img" width={300} height={300} loading="lazy" />
             <div className="footer-logo-text">
               <span className="footer-brand-cn">統包先生</span>
               <span className="footer-brand-en">MR.TURNKEY</span>
@@ -47,7 +47,7 @@ export default function Footer() {
             {STORE_LINKS.map((s) => <li key={s}><a href="#locations">{s}</a></li>)}
           </ul>
           <div style={{ marginTop: 20, padding: 14, background: 'var(--yellow-faint)', border: '1px solid rgba(249,185,27,0.15)' }}>
-            <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.68rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 6 }}>CONTACT</div>
+            <div style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.68rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 6 }}>CONTACT</div>
             <div style={{ fontSize: '0.8rem', color: 'var(--gray)' }}>官方 LINE 諮詢<br />預約到店服務</div>
           </div>
         </div>

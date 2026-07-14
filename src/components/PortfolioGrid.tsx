@@ -7,6 +7,8 @@ import type { Project } from '@/lib/projects';
 export default function PortfolioGrid({ projects }: { projects: Project[] }) {
   const [active, setActive] = useState<Project | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setActive(null);
@@ -16,6 +18,17 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
+  }, [active]);
+
+  // dialog 焦點管理：開啟時移入關閉鈕，關閉時歸還觸發元素
+  useEffect(() => {
+    if (active) {
+      lastFocusedRef.current = document.activeElement as HTMLElement | null;
+      closeBtnRef.current?.focus();
+    } else if (lastFocusedRef.current) {
+      lastFocusedRef.current.focus();
+      lastFocusedRef.current = null;
+    }
   }, [active]);
 
   const scrollByCards = (dir: number) => {
@@ -67,6 +80,9 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
           >
             <motion.div
               className="pf-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="pf-modal-title"
               onClick={(e) => e.stopPropagation()}
               initial={{ opacity: 0, y: 30, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -76,12 +92,12 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               <div className="pf-modal-head">
                 <div>
                   <span className="proj-type">{active.category}</span>
-                  <h3 className="pf-modal-title">{active.name}</h3>
+                  <h3 className="pf-modal-title" id="pf-modal-title">{active.name}</h3>
                   {active.location && active.location !== '—' && (
                     <span className="pf-modal-meta">{active.location}{active.style ? ` · ${active.style}` : ''}</span>
                   )}
                 </div>
-                <button type="button" className="pf-modal-close" onClick={() => setActive(null)} aria-label="關閉">×</button>
+                <button type="button" ref={closeBtnRef} className="pf-modal-close" onClick={() => setActive(null)} aria-label="關閉作品詳情">×</button>
               </div>
               {active.description && <p className="pf-modal-desc">{active.description}</p>}
               <div className="pf-modal-gallery">
