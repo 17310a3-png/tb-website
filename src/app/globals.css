@@ -245,6 +245,7 @@
     top: 50%;
     transform: translateY(-50%);
     width: 58vw;
+    height: auto;
     max-width: 900px;
     opacity: 0.05;
     pointer-events: none;
@@ -451,6 +452,7 @@
   .about-photo-main {
     grid-column: 1 / -1;
     width: 100%;
+    height: auto;
     aspect-ratio: 16/9;
     object-fit: cover;
     object-position: center 30%;
@@ -460,6 +462,7 @@
 
   .about-photo-sub {
     width: 100%;
+    height: auto;
     aspect-ratio: 4/3;
     object-fit: cover;
     object-position: center 20%;
@@ -759,6 +762,7 @@
 
   .why-brand-logo {
     width: 64px;
+    height: auto;
     margin-bottom: 20px;
   }
 
@@ -1132,6 +1136,7 @@
 
   .footer-logo-img {
     width: 48px;
+    height: auto;
   }
 
   .footer-logo-text { display: flex; flex-direction: column; }
