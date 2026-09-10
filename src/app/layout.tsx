@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_TC, Bebas_Neue, Barlow_Condensed } from 'next/font/google';
 import MotionProvider from '@/components/MotionProvider';
+import GoogleAds from '@/components/GoogleAds';
 import './globals.css';
 
 const notoSansTC = Noto_Sans_TC({
@@ -97,6 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <style>{`[style*="opacity:0"], [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; } .hero-bg-logo { opacity: 0.05 !important; }`}</style>
         </noscript>
         <MotionProvider>{children}</MotionProvider>
+        <GoogleAds />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>

@@ -53,6 +53,7 @@
 | `src/components/Locations` | 8 分店據點 |
 | `src/components/Contact / Faq / Footer / Nav` | 聯絡 / 常見問題 / 頁尾 / 導航 |
 | `src/components/Marquee / NumbersStrip / FloatCta / Reveal` | 跑馬燈 / 數據條 / 浮動 CTA / 進場動畫 wrapper |
+| `src/components/GoogleAds.tsx` / `ConversionLink.tsx` / `src/lib/gtag.ts` | Google Ads 全域代碼（`AW-18429852534`）+ 轉換回報：點 SurveyCake 表單鈕 / LINE CTA 時打 `send_to` 轉換標籤（2026-09-10 行銷公司投關鍵字用，可用 env `NEXT_PUBLIC_GADS_ID` / `NEXT_PUBLIC_GADS_CONVERSION_LABEL` 覆寫） |
 | `next.config.mjs` | standalone 輸出 + Supabase 圖片 host 白名單 |
 | `Dockerfile` | Zeabur 部署 |
 

@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import ConversionLink from './ConversionLink';
 
 const SURVEYCAKE_URL = process.env.NEXT_PUBLIC_SURVEYCAKE_URL || 'https://www.surveycake.com/s/Ad81e';
 const LINE_URL = process.env.NEXT_PUBLIC_LINE_URL || '';
@@ -15,7 +16,7 @@ export default function Contact() {
             無論你正在準備交屋、規劃翻新，或只是想先釐清預算與方向，都歡迎先與統包先生聊聊。一次清楚的諮詢，能讓後面的每一步少一點摸索，多一點安心。
           </p>
           {LINE_URL && (
-            <a className="contact-line-cta" href={LINE_URL} target="_blank" rel="noopener noreferrer">
+            <ConversionLink source="line-contact" className="contact-line-cta" href={LINE_URL} target="_blank" rel="noopener noreferrer">
               <div className="line-icon" aria-hidden="true">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" focusable="false">
                   <path d="M12 3C6.477 3 2 6.847 2 11.594c0 2.73 1.487 5.16 3.797 6.73-.09.85-.395 2.087-1.006 3.02-.16.245.05.56.335.49 1.9-.46 3.42-1.34 4.376-2.03.8.157 1.636.24 2.498.24 5.523 0 10-3.846 10-8.593S17.523 3 12 3z" />
@@ -26,7 +27,7 @@ export default function Contact() {
                 <p>最快速的諮詢方式，回覆迅速</p>
               </div>
               <div className="line-arrow">›</div>
-            </a>
+            </ConversionLink>
           )}
         </Reveal>
 
@@ -42,9 +43,9 @@ export default function Contact() {
               <li>預算範圍與想優先解決的問題</li>
               <li>專人回覆、不需自己追進度</li>
             </ul>
-            <a className="btn-yellow contact-survey-btn" href={SURVEYCAKE_URL} target="_blank" rel="noopener noreferrer">
+            <ConversionLink source="surveycake" className="btn-yellow contact-survey-btn" href={SURVEYCAKE_URL} target="_blank" rel="noopener noreferrer">
               前往預約諮詢表單 →
-            </a>
+            </ConversionLink>
             <p className="contact-survey-note">點擊後將開啟線上表單（SurveyCake），填寫完成即送出。</p>
           </div>
         </Reveal>
