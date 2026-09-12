@@ -1,4 +1,4 @@
-const SERVICE_LINKS = ['舊屋翻新', '商業空間', '室內裝修', '預售屋客變', '工程發包管理', '完工驗收售後'];
+const SERVICE_LINKS = ['舊屋翻新', '新成屋裝修', '商業空間', '預售屋客變', '工程發包管理', '完工驗收售後'];
 const BRAND_LINKS: [string, string][] = [
   ['#about', '關於統包先生'],
   ['#process', '服務流程'],
@@ -55,7 +55,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="footer-copy">© 2026 統包先生 MR.TURNKEY. All Rights Reserved.</div>
-        <div className="footer-copy">室內裝修整合服務品牌 · 舊屋翻新 · 商業空間 · 室內裝修</div>
+        <div className="footer-copy">室內裝修 · 室內設計 · 新成屋裝修 · 舊屋翻新 · 商業空間 · 水電 · 木作 · 泥作 · 衛浴 · 廚具 · 鋁窗 · 地板</div>
       </div>
     </footer>
   );

@@ -13,6 +13,17 @@ import Faq from '@/components/Faq';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatCta from '@/components/FloatCta';
+import { FAQS } from '@/lib/faqs';
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 
 // ISR：每 60 秒重新生成，作品集在 Supabase 新增後最多 60 秒內自動上站，無需重部署
 export const revalidate = 60;
@@ -36,6 +47,7 @@ export default async function Home() {
       <Faq />
       <Contact />
       <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>
   );
 }
