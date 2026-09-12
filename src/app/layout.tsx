@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: '%s｜統包先生 MR.TURNKEY',
   },
   description:
-    '統包先生提供室內裝修、室內設計、舊屋翻新與商業空間統包服務，整合水電、木作、泥作、衛浴、廚具、鋁窗、地板等工程與施工管理。雙北、桃園、新竹、台中共 8 間門市，透明流程、安心交付。',
+    '統包先生承接室內裝修、室內設計、新成屋裝修、舊屋翻新與商業空間的全室統包。水電、木作、泥作、衛浴、廚具、鋁窗、地板由同一窗口負責。雙北、桃園、新竹、台中共 8 間門市。',
   alternates: { canonical: '/' },
   icons: {
     icon: [
@@ -79,7 +79,7 @@ const jsonLd = {
   image: `${SITE}/assets/og-image.jpg`,
   priceRange: '$$',
   areaServed: ['台北市', '新北市', '桃園市', '新竹市', '新竹縣', '台中市'],
-  knowsAbout: ['室內裝修', '室內設計', '裝潢', '舊屋翻新', '商業空間', '預售屋客變', '工程發包管理', '水電工程', '木作工程', '泥作磁磚', '油漆', '鋁窗隔音窗', '衛浴翻新', '廚具更換', '木地板', '拆除清運', '軟裝'],
+  knowsAbout: ['室內裝修', '室內設計', '裝潢', '新成屋裝修', '舊屋翻新', '商業空間', '預售屋客變', '工程發包管理', '水電工程', '木作工程', '泥作磁磚', '油漆', '鋁窗隔音窗', '衛浴翻新', '廚具更換', '木地板', '拆除清運', '軟裝'],
   department: [
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新北市五股店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新北市', streetAddress: '五股區新五路二段341號' } },
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台北市東門店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台北市', streetAddress: '中正區信義路二段129號2樓' } },
