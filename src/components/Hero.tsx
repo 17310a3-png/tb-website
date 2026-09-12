@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div className="hero-eyebrow" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease }}>
           <div className="hero-eyebrow-line" />
-          <span className="hero-eyebrow-text">住宅裝修整合服務品牌</span>
+          <span className="hero-eyebrow-text">室內裝修・室內設計整合服務品牌</span>
         </motion.div>
         <motion.h1 className="hero-title" initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease }}>
           裝修，<br />

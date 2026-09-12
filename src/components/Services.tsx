@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import { TRADES } from '@/lib/trades';
 
 const SERVICES = [
   ['01', '舊屋翻新', '從拆除、水電、泥作、防水、木作到整體空間重塑，協助客戶兼顧美感、預算與長期使用安全，重新定義老屋的生活可能性。'],
@@ -33,6 +34,24 @@ export default function Services() {
             <span className="service-tag">→ 了解更多</span>
           </Reveal>
         ))}
+      </div>
+
+      <div className="trades">
+        <Reveal className="trades-head">
+          <div className="eyebrow"><span className="eyebrow-text">Trades</span></div>
+          <h3 className="trades-title">工程項目</h3>
+          <p className="section-body" style={{ fontSize: '0.88rem' }}>
+            全室裝修或局部翻新都可以。每一個工種都由統包先生統一發包、排程與管理，你只需要對一個窗口。
+          </p>
+        </Reveal>
+        <div className="trades-grid">
+          {TRADES.map(([title, desc], i) => (
+            <Reveal className="trade-item" key={title} delay={(i % 5) * 0.05}>
+              <h4 className="trade-title">{title}</h4>
+              <p className="trade-desc">{desc}</p>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

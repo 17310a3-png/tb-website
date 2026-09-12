@@ -29,9 +29,12 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://tb-website.zeabur.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: '統包先生 MR.TURNKEY｜讓裝修變得更清楚',
+  title: {
+    default: '統包先生 MR.TURNKEY｜室內裝修・室內設計・舊屋翻新統包',
+    template: '%s｜統包先生 MR.TURNKEY',
+  },
   description:
-    '統包先生以住宅裝修為核心，整合設計、工程發包、施工管理與售後服務。透明流程、專業分工、安心交付。舊屋翻新、商業空間、室內裝修。',
+    '統包先生提供室內裝修、室內設計、舊屋翻新與商業空間統包服務，整合水電、木作、泥作、衛浴、廚具、鋁窗、地板等工程與施工管理。雙北、桃園、新竹、台中共 8 間門市，透明流程、安心交付。',
   alternates: { canonical: '/' },
   icons: {
     icon: [
@@ -45,16 +48,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_TW',
     siteName: '統包先生 MR.TURNKEY',
-    title: '統包先生 MR.TURNKEY｜讓裝修變得更清楚',
+    title: '統包先生 MR.TURNKEY｜室內裝修・室內設計・舊屋翻新統包',
     description:
-      '住宅裝修整合服務品牌。整合設計、工程發包、施工管理與售後服務，用透明流程把複雜的裝修，變成更清楚、更安心的體驗。',
+      '室內裝修整合服務品牌。整合設計、工程發包、施工管理與售後服務，用透明流程把複雜的裝修，變成更清楚、更安心的體驗。',
     url: '/',
     images: [{ url: '/assets/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '統包先生 MR.TURNKEY｜讓裝修變得更清楚',
-    description: '住宅裝修整合服務品牌。透明流程、專業分工、安心交付。',
+    title: '統包先生 MR.TURNKEY｜室內裝修・室內設計・舊屋翻新統包',
+    description: '室內裝修整合服務品牌。透明流程、專業分工、安心交付。',
     images: ['/assets/og-image.jpg'],
   },
   verification: {
@@ -76,7 +79,7 @@ const jsonLd = {
   image: `${SITE}/assets/og-image.jpg`,
   priceRange: '$$',
   areaServed: ['台北市', '新北市', '桃園市', '新竹市', '新竹縣', '台中市'],
-  knowsAbout: ['舊屋翻新', '商業空間', '室內裝修', '預售屋客變', '工程發包管理', '完工驗收售後'],
+  knowsAbout: ['室內裝修', '室內設計', '裝潢', '舊屋翻新', '商業空間', '預售屋客變', '工程發包管理', '水電工程', '木作工程', '泥作磁磚', '油漆', '鋁窗隔音窗', '衛浴翻新', '廚具更換', '木地板', '拆除清運', '軟裝'],
   department: [
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新北市五股店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新北市', streetAddress: '五股區新五路二段341號' } },
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台北市東門店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台北市', streetAddress: '中正區信義路二段129號2樓' } },
