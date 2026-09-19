@@ -31,10 +31,11 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
           </Reveal>
 
           <Reveal y={0}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr', gap: 4, marginBottom: 4 }} className="pf-feature-top">
+            {/* 兩張圖等高：高度由容器決定，不再各自用 aspect-ratio（1.6fr 那張會比 1fr 高很多） */}
+            <div className="pf-feature-top">
               {featured.images.slice(0, 2).map((src, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={src} loading="lazy" alt={`${featured.name} ${i + 1}`} style={{ width: '100%', aspectRatio: '16/10', objectFit: 'cover', display: 'block' }} />
+                <img key={i} src={src} loading="lazy" alt={`${featured.name} ${i + 1}`} />
               ))}
             </div>
           </Reveal>

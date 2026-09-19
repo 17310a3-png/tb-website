@@ -32,3 +32,6 @@ yarn-error.log*
 
 # 原始素材（不進部署）
 /其他/
+
+# 完工照片原檔（30MB+，不進 git；上傳到 Supabase Storage 後由 CMS 讀取）
+/完工照片/

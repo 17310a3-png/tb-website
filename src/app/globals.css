@@ -1486,9 +1486,25 @@
   .pf-modal { padding: 24px; }
   .pf-modal-gallery { grid-template-columns: 1fr; }
   .pf-modal-gallery img:first-child { aspect-ratio: 4/3; }
-  .pf-feature-top { grid-template-columns: 1fr !important; }
+  .pf-feature-top { grid-template-columns: 1fr; height: auto; }
+  .pf-feature-top img { height: auto; aspect-ratio: 16/10; }
   .pf-feature-bottom { grid-template-columns: 1fr 1fr !important; }
   .pf-spec { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── Portfolio 主打案：上排兩張等高 ── */
+.pf-feature-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 4px;
+  margin-bottom: 4px;
+  height: clamp(320px, 38vw, 560px);
+}
+.pf-feature-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ── Contact: SurveyCake CTA 卡 ── */
