@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react';
 
 const LINKS = [
-  ['#about', '關於我們'],
-  ['#services', '服務項目'],
-  ['#process', '服務流程'],
-  ['#portfolio', '作品案例'],
-  ['#why', '為何選擇'],
-  ['#locations', '門市據點'],
-  ['#faq', '常見問題'],
+  ['/#about', '關於我們'],
+  ['/#services', '服務項目'],
+  ['/#process', '服務流程'],
+  ['/#portfolio', '作品案例'],
+  ['/#why', '為何選擇'],
+  ['/#locations', '門市據點'],
+  ['/#faq', '常見問題'],
 ];
 
 export default function Nav() {
@@ -26,7 +26,7 @@ export default function Nav() {
   return (
     <>
       <nav id="main-nav" className={scrolled ? 'scrolled' : ''}>
-        <a href="#hero" className="nav-logo">
+        <a href="/" className="nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo/mark-white.png" alt="統包先生 Logo" className="nav-logo-icon" width={300} height={300} />
           <span className="nav-logo-text">
@@ -41,7 +41,7 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <a href="#contact" className="nav-cta">預約諮詢</a>
+            <a href="/#contact" className="nav-cta">預約諮詢</a>
           </li>
         </ul>
         <button
@@ -60,7 +60,7 @@ export default function Nav() {
         {LINKS.map(([href, label]) => (
           <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
         ))}
-        <a href="#contact" onClick={() => setOpen(false)}>預約諮詢</a>
+        <a href="/#contact" onClick={() => setOpen(false)}>預約諮詢</a>
       </div>
     </>
   );

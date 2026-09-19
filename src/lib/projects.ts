@@ -12,6 +12,7 @@ export type Project = {
   images: string[];
   is_featured: boolean;
   sort_order: number;
+  updated_at?: string;
 };
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -34,3 +35,25 @@ export async function getProjects(): Promise<Project[]> {
   }
   return (data ?? []) as Project[];
 }
+
+/** 單一作品（/projects/[slug] 用）；未發佈或不存在回 null。 */
+export async function getProject(slug: string): Promise<Project | null> {
+  const { data, error } = await supabase
+    .from('projects')
+    .select('*')
+    .eq('slug', slug)
+    .eq('is_published', true)
+    .maybeSingle();
+
+  if (error) {
+    console.error('[getProject]', error.message);
+    return null;
+  }
+  return (data as Project | null) ?? null;
+}
+
+/** 作品內頁網址（首頁卡片、sitemap、相關案例共用） */
+export const projectPath = (slug: string) => `/projects/${slug}`;
+
+/** 地點「—」視為未填 */
+export const hasLocation = (p: Project) => !!p.location && p.location !== '—';

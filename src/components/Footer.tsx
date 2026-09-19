@@ -1,11 +1,11 @@
 const SERVICE_LINKS = ['舊屋翻新', '新成屋裝修', '商業空間', '預售屋客變', '工程發包管理', '完工驗收售後'];
 const BRAND_LINKS: [string, string][] = [
-  ['#about', '關於統包先生'],
-  ['#process', '服務流程'],
-  ['#portfolio', '作品案例'],
-  ['#why', '為什麼選擇我們'],
-  ['#locations', '門市據點'],
-  ['#faq', '常見問題'],
+  ['/#about', '關於統包先生'],
+  ['/#process', '服務流程'],
+  ['/#portfolio', '作品案例'],
+  ['/#why', '為什麼選擇我們'],
+  ['/#locations', '門市據點'],
+  ['/#faq', '常見問題'],
 ];
 const STORE_LINKS = ['新北市五股店', '台北市東門店', '新北市板橋店', '新竹市光復店', '桃園慈文店', '桃園龜山店', '台中烏日店', '台中水湳店'];
 
@@ -32,7 +32,7 @@ export default function Footer() {
         <div>
           <div className="footer-col-title">服務項目</div>
           <ul className="footer-links">
-            {SERVICE_LINKS.map((s) => <li key={s}><a href="#services">{s}</a></li>)}
+            {SERVICE_LINKS.map((s) => <li key={s}><a href="/#services">{s}</a></li>)}
           </ul>
         </div>
         <div>
@@ -44,7 +44,7 @@ export default function Footer() {
         <div>
           <div className="footer-col-title">服務據點</div>
           <ul className="footer-links">
-            {STORE_LINKS.map((s) => <li key={s}><a href="#locations">{s}</a></li>)}
+            {STORE_LINKS.map((s) => <li key={s}><a href="/#locations">{s}</a></li>)}
           </ul>
           <div style={{ marginTop: 20, padding: 14, background: 'var(--yellow-faint)', border: '1px solid rgba(249,185,27,0.15)' }}>
             <div style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.68rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 6 }}>CONTACT</div>
