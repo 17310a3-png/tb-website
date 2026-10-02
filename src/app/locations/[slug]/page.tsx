@@ -16,6 +16,18 @@ export const dynamicParams = false;
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mrturnkey.com.tw';
 const SURVEYCAKE_URL = process.env.NEXT_PUBLIC_SURVEYCAKE_URL || 'https://www.surveycake.com/s/Ad81e';
 
+
+/** 以字串為種子的穩定洗牌（mulberry32），同一店每次重建結果一致，不同店組合不同 */
+function seededShuffle<T>(arr: T[], seed: string): T[] {
+  let h = 1779033703 ^ seed.length;
+  for (let i = 0; i < seed.length; i++) h = Math.imul(h ^ seed.charCodeAt(i), 3432918353), (h = (h << 13) | (h >>> 19));
+  let a = h >>> 0;
+  const rand = () => { a = (a + 0x6d2b79f5) >>> 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; }
+  return out;
+}
+
 type Params = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
@@ -43,10 +55,9 @@ export default async function StorePage({ params }: Params) {
   const s = getStore(slug);
   if (!s) notFound();
 
+  // 完工案例不綁分店（有些區域案例少會空），改用店 slug 當種子打散，每店固定拿 4 組、各店組合不同
   const all = await getProjects();
-  const local = all.filter((p) => hasLocation(p) && s.match.some((m) => p.location!.includes(m)));
-  const cases = (local.length ? local : all).slice(0, 6);
-  const isLocal = local.length > 0;
+  const cases = seededShuffle(all, s.slug).slice(0, 4);
   const others = STORES.filter((x) => x.slug !== s.slug);
 
   const jsonLd = {
@@ -139,7 +150,7 @@ export default async function StorePage({ params }: Params) {
           <section className="pp-related" aria-label="完工案例">
             <Reveal>
               <div className="pp-related-head">
-                <div className="eyebrow" style={{ marginBottom: 0 }}><span className="eyebrow-text">{isLocal ? `${s.district}周邊完工案例` : '完工案例'}</span></div>
+                <div className="eyebrow" style={{ marginBottom: 0 }}><span className="eyebrow-text">完工案例</span></div>
                 <a href="/#portfolio" className="pp-related-all">看全部案例 →</a>
               </div>
             </Reveal>
