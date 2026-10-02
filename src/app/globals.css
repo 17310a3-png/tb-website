@@ -1621,3 +1621,39 @@
   .art-side { position: static; }
   .art-side-toc { display: none; } /* 手機不放目錄，直接看文 */
 }
+
+/* ── 客戶評價 /reviews（Google 地圖評論，2026-10-02）── */
+.rev-stars { position: relative; display: inline-block; line-height: 1; letter-spacing: 0.08em; white-space: nowrap; }
+.rev-stars-base { color: var(--border-bright); }
+.rev-stars-fill { position: absolute; inset: 0 auto 0 0; overflow: hidden; color: var(--yellow); }
+.rev-score {
+  display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+  padding: 32px 36px; margin-bottom: 64px;
+  background: var(--near-black); border: 1px solid var(--border); border-left: 4px solid var(--yellow);
+}
+.rev-score-num { font-family: var(--font-bebas), 'Bebas Neue', sans-serif; font-size: clamp(4rem, 9vw, 6rem); line-height: 0.9; color: var(--white-pure); }
+.rev-score-side { display: flex; flex-direction: column; gap: 8px; }
+.rev-score-count { font-size: 1rem; font-weight: 700; color: var(--white); }
+.rev-score-src { font-size: 0.8rem; color: var(--gray); }
+.rev-score-link { margin-left: auto; font-size: 0.9rem; font-weight: 700; color: var(--yellow); text-decoration: none; }
+.rev-score-link:hover { text-decoration: underline; }
+.rev-note { font-size: 0.8rem; color: var(--gray); }
+.rev-card { cursor: default; }
+.rev-card:hover { background: var(--near-black); }
+.rev-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.rev-card-time { font-size: 0.75rem; color: var(--gray); }
+.rev-card-text { font-size: 0.9rem; line-height: 1.85; color: var(--light-gray); margin: 0; white-space: pre-line; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; overflow: hidden; }
+.rev-card-author { margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--white); }
+.rev-card-author img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+.rev-card-author a { color: var(--white); text-decoration: none; }
+.rev-card-author a:hover { color: var(--yellow); }
+.rev-card-via { margin-left: auto; font-size: 0.72rem; color: var(--gray); }
+.rev-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 28px 32px; margin-bottom: 40px; border: 1px solid var(--border); }
+.rev-cta p { margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--white-pure); }
+.rev-cta-btn { padding: 12px 22px; background: var(--yellow); color: var(--near-black); font-weight: 900; text-decoration: none; }
+.rev-cta-btn:hover { background: var(--yellow-dark); }
+@media (max-width: 640px) {
+  .rev-score { padding: 24px 20px; gap: 18px; }
+  .rev-score-link { margin-left: 0; }
+  .art-section-head:has(.rev-note) { flex-direction: column; gap: 8px; }
+}
