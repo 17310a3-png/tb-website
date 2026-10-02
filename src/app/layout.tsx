@@ -85,6 +85,7 @@ const jsonLd = {
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台北市東門店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台北市', streetAddress: '中正區信義路二段129號2樓' } },
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新北市板橋店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新北市', streetAddress: '板橋區四川路一段268號' } },
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新竹市光復店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新竹市', streetAddress: '東區光復路二段194巷16號' } },
+    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新竹竹北店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新竹縣', streetAddress: '竹北市新光五街36號' } },
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 桃園慈文店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '桃園市', streetAddress: '桃園區慈文路470號' } },
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台中烏日店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台中市', streetAddress: '烏日區三榮路一段75號' } },
     { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台中水湳店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台中市', streetAddress: '西屯區中清路二段1409號' } },
