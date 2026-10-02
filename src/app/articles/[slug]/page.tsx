@@ -47,7 +47,9 @@ export default async function ArticlePage({ params }: Params) {
   if (!a) notFound();
 
   const all = getArticles().filter((x) => x.slug !== a.slug);
-  const related = [...all.filter((x) => x.category === a.category), ...all.filter((x) => x.category !== a.category)].slice(0, 3);
+  const ordered = [...all.filter((x) => x.category === a.category), ...all.filter((x) => x.category !== a.category)];
+  const related = ordered.slice(0, 3);
+  const sideList = ordered.slice(0, 7);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -100,23 +102,57 @@ export default async function ArticlePage({ params }: Params) {
           </Reveal>
         </header>
 
-        <Reveal y={0}>
-          <p className="art-lead">{a.description}</p>
-        </Reveal>
-
-        <Reveal y={0}>
-          <article className="art-body" dangerouslySetInnerHTML={{ __html: a.html }} />
-        </Reveal>
-
-        <Reveal>
-          <div className="pp-cta">
-            <div className="pp-cta-text">
-              看完有問題，或想知道自己家的狀況怎麼估？<br />
-              填預約表單，我們依你的房屋條件安排顧問與你聯繫。
-            </div>
-            <ConversionLink source={`article-${a.slug}`} href={SURVEYCAKE_URL} target="_blank" rel="noopener noreferrer" className="btn-yellow">預約諮詢</ConversionLink>
+        <div className="art-layout">
+          <div className="art-main">
+            <Reveal y={0}>
+              <p className="art-lead">{a.description}</p>
+            </Reveal>
+            <Reveal y={0}>
+              <article className="art-body" dangerouslySetInnerHTML={{ __html: a.html }} />
+            </Reveal>
+            <Reveal>
+              <div className="pp-cta">
+                <div className="pp-cta-text">
+                  看完有問題，或想知道自己家的狀況怎麼估？<br />
+                  填預約表單，我們依你的房屋條件安排顧問與你聯繫。
+                </div>
+                <ConversionLink source={`article-${a.slug}`} href={SURVEYCAKE_URL} target="_blank" rel="noopener noreferrer" className="btn-yellow">預約諮詢</ConversionLink>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+
+          <aside className="art-side" aria-label="側欄">
+            {a.headings.length > 1 && (
+              <div className="art-side-block art-side-toc">
+                <div className="art-side-title">本文目錄</div>
+                <ol className="art-toc">
+                  {a.headings.map((h) => (
+                    <li key={h.id}><a href={`#${h.id}`}>{h.text}</a></li>
+                  ))}
+                </ol>
+              </div>
+            )}
+            <div className="art-side-block">
+              <div className="art-side-title">其他文章</div>
+              <ul className="art-side-list">
+                {sideList.map((r) => (
+                  <li key={r.slug}>
+                    <a href={articlePath(r.slug)} className="art-side-item">
+                      <span className="art-side-cat">{r.category}</span>
+                      <span className="art-side-name">{r.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a href="/articles" className="art-side-all">全部文章 →</a>
+            </div>
+            <div className="art-side-block art-side-cta">
+              <div className="art-side-title">想估自己家的狀況？</div>
+              <p>填表單，顧問依你的房屋條件回覆。</p>
+              <ConversionLink source={`article-${a.slug}-side`} href={SURVEYCAKE_URL} target="_blank" rel="noopener noreferrer" className="btn-yellow art-side-btn">預約諮詢</ConversionLink>
+            </div>
+          </aside>
+        </div>
 
         {related.length > 0 && (
           <section className="art-related" aria-label="延伸閱讀">

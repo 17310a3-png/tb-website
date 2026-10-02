@@ -16,7 +16,8 @@ export type ArticleMeta = {
   chars: number;
 };
 
-export type Article = ArticleMeta & { html: string };
+export type Heading = { id: string; text: string };
+export type Article = ArticleMeta & { html: string; headings: Heading[] };
 
 const DIR = path.join(process.cwd(), 'content', 'articles');
 
@@ -31,7 +32,14 @@ function readAll(): Article[] {
     .map((f) => {
       const raw = fs.readFileSync(path.join(DIR, f), 'utf8');
       const { data, content } = matter(raw);
-      const html = marked.parse(content, { gfm: true, breaks: false }) as string;
+      const rawHtml = marked.parse(content, { gfm: true, breaks: false }) as string;
+      // h2 補 id 給側欄目錄用（marked 預設不產 id）
+      const headings: Heading[] = [];
+      const html = rawHtml.replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner: string) => {
+        const id = `s${headings.length + 1}`;
+        headings.push({ id, text: inner.replace(/<[^>]+>/g, '') });
+        return `<h2 id="${id}">${inner}</h2>`;
+      });
       const chars = (content.match(/[一-鿿]/g) ?? []).length;
       return {
         slug: String(data.slug ?? f.replace(/\.md$/, '')),
@@ -42,6 +50,7 @@ function readAll(): Article[] {
         status: (data.status === 'published' ? 'published' : 'draft') as ArticleMeta['status'],
         chars,
         html,
+        headings,
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.title.localeCompare(b.title, 'zh-Hant')));
@@ -57,7 +66,7 @@ function all(): Article[] {
 const visible = (a: Article) => a.status === 'published' || a.status === 'draft';
 
 export function getArticles(): ArticleMeta[] {
-  return all().filter(visible).map(({ html: _html, ...meta }) => meta);
+  return all().filter(visible).map(({ html: _html, headings: _h, ...meta }) => meta);
 }
 
 export function getArticle(slug: string): Article | null {
