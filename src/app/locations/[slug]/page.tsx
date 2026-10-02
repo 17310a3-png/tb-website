@@ -163,7 +163,7 @@ export default async function StorePage({ params }: Params) {
         <Reveal>
           <div className="pp-cta">
             <div className="pp-cta-text">
-              在{s.area.split('、')[0]}一帶準備裝修？<br />
+              在{s.district}一帶準備裝修？<br />
               先填預約表單，{s.short}會依你的房屋條件安排顧問與你聯繫。
             </div>
             <ConversionLink source={`store-${s.slug}-cta`} href={SURVEYCAKE_URL} target="_blank" rel="noopener noreferrer" className="btn-yellow">預約{s.short}諮詢</ConversionLink>
