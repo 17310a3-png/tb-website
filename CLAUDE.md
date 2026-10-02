@@ -53,7 +53,7 @@
 | `src/components/Locations` | 9 分店據點卡片（資料來自 `lib/stores.ts`，卡片連到分店頁） |
 | `src/components/Contact / Faq / Footer / Nav` | 聯絡 / 常見問題 / 頁尾 / 導航 |
 | `src/components/Marquee / NumbersStrip / FloatCta / Reveal` | 跑馬燈 / 數據條 / 浮動 CTA / 進場動畫 wrapper |
-| `src/app/locations/[slug]/page.tsx` + `src/lib/stores.ts` | **9 間分店頁**（在地 SEO：`竹北室內裝修｜統包先生竹北店` 這類標題）。門市資料單一來源在 `stores.ts`（Locations 卡片 / Footer / sitemap / layout JSON-LD 都讀它）；完工案例**不綁分店**（以 slug 當種子穩定打散、每店固定 4 組、各店組合不同）。新增門市只改 `stores.ts` 一處 |
+| `src/app/locations/[slug]/page.tsx` + `src/lib/stores.ts` | **9 間分店頁**（在地 SEO：`竹北室內裝修｜統包先生竹北店` 這類標題）。門市資料單一來源在 `stores.ts`（Locations 卡片 / Footer / sitemap / layout JSON-LD 都讀它）；完工案例**不綁分店**（以 slug 當種子穩定打散、每店固定 6 組、各店組合不同）。新增門市只改 `stores.ts` 一處 |
 | `src/components/GoogleAds.tsx` / `ConversionLink.tsx` / `src/lib/gtag.ts` | Google Ads 全域代碼（`AW-18429852534`）+ 轉換回報：點 SurveyCake 表單鈕 / LINE CTA 時打 `send_to` 轉換標籤（2026-09-10 行銷公司投關鍵字用，可用 env `NEXT_PUBLIC_GADS_ID` / `NEXT_PUBLIC_GADS_CONVERSION_LABEL` 覆寫） |
 | `next.config.mjs` | standalone 輸出 + Supabase 圖片 host 白名單 |
 | `Dockerfile` | Zeabur 部署 |

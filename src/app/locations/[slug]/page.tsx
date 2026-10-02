@@ -55,9 +55,9 @@ export default async function StorePage({ params }: Params) {
   const s = getStore(slug);
   if (!s) notFound();
 
-  // 完工案例不綁分店（有些區域案例少會空），改用店 slug 當種子打散，每店固定拿 4 組、各店組合不同
+  // 完工案例不綁分店（有些區域案例少會空），改用店 slug 當種子打散，每店固定拿 6 組、各店組合不同
   const all = await getProjects();
-  const cases = seededShuffle(all, s.slug).slice(0, 4);
+  const cases = seededShuffle(all, s.slug).slice(0, 6);
   const others = STORES.filter((x) => x.slug !== s.slug);
 
   const jsonLd = {
