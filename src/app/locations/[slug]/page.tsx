@@ -29,7 +29,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const title = `${s.district}室內裝修・舊屋翻新・新成屋裝修｜統包先生${s.short}`;
   const description = `統包先生${s.name}，服務${s.area}。承接${s.district}住宅全室裝修：舊屋翻新、新成屋裝修、預售屋客變與商業空間，水電、木作、泥作、衛浴、廚具一次整合。地址：${s.addr}，歡迎預約到店諮詢。`;
   return {
-    title,
+    // 標題裡已有「統包先生X店」，不再套 layout 的「｜統包先生 MR.TURNKEY」後綴，避免 SERP 截斷
+    title: { absolute: title },
     description,
     alternates: { canonical: storePath(s.slug) },
     openGraph: { type: 'website', locale: 'zh_TW', siteName: '統包先生 MR.TURNKEY', title, description, url: storePath(s.slug), images: [{ url: '/assets/og-image.jpg', width: 1200, height: 630 }] },
