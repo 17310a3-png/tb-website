@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getProjects, projectPath } from '@/lib/projects';
 import { STORES, storePath } from '@/lib/stores';
+import { getArticles, articlePath } from '@/lib/articles';
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mrturnkey.com.tw';
 
@@ -9,7 +10,10 @@ export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projects = await getProjects();
+  const articles = getArticles();
   return [
+    { url: `${SITE}/articles`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+    ...articles.map((a) => ({ url: `${SITE}${articlePath(a.slug)}`, lastModified: a.date ? new Date(a.date) : new Date(), changeFrequency: 'monthly' as const, priority: 0.7 })),
     {
       url: SITE,
       lastModified: new Date(),
