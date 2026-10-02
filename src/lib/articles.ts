@@ -21,6 +21,13 @@ export type Article = ArticleMeta & { html: string; headings: Heading[] };
 
 const DIR = path.join(process.cwd(), 'content', 'articles');
 
+/** YAML 的 date 會被 gray-matter 解析成 Date 物件（UTC 午夜），轉回 YYYY-MM-DD 字串 */
+function fmtDate(v: unknown): string {
+  if (!v) return '';
+  if (v instanceof Date) return v.toISOString().slice(0, 10);
+  return String(v).slice(0, 10);
+}
+
 /** 分類顯示順序（README 的分法） */
 export const CATEGORY_ORDER = ['合約與預算', '工程知識', '施工與驗收', '規劃與設計', '選材與設備'];
 
@@ -46,7 +53,7 @@ function readAll(): Article[] {
         title: String(data.title ?? ''),
         description: String(data.description ?? ''),
         category: String(data.category ?? '其他'),
-        date: data.date ? String(data.date).slice(0, 10) : '',
+        date: fmtDate(data.date),
         status: (data.status === 'published' ? 'published' : 'draft') as ArticleMeta['status'],
         chars,
         html,
