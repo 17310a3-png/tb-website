@@ -1524,3 +1524,20 @@
   .pp-related-grid { grid-template-columns: 1fr; }
   .pp-spec { grid-template-columns: 1fr 1fr; }
 }
+
+/* ===== 分店頁 /locations/[slug] ===== */
+.sp-trades { margin-bottom: 88px; }
+.sp-trades-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 28px; }
+.sp-trade { background: var(--near-black); padding: 22px 24px; }
+.sp-trade-name { font-size: 0.95rem; font-weight: 700; color: var(--white-pure); margin-bottom: 6px; }
+.sp-trade-desc { font-size: 0.82rem; line-height: 1.7; color: var(--gray); }
+.sp-note { margin-top: 16px; font-size: 0.8rem; color: var(--gray); }
+.sp-others { margin-top: 88px; }
+.sp-others-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 20px; }
+.sp-other { display: flex; flex-direction: column; gap: 4px; padding: 18px 22px; background: var(--near-black); text-decoration: none; transition: background 0.2s; }
+.sp-other:hover { background: var(--yellow-faint); }
+.sp-other-name { font-size: 0.9rem; font-weight: 700; color: var(--white-pure); }
+.sp-other-area { font-size: 0.75rem; color: var(--gray); }
+@media (max-width: 720px) {
+  .sp-trades-grid, .sp-others-list { grid-template-columns: 1fr; }
+}

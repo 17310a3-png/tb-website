@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_TC, Bebas_Neue, Barlow_Condensed } from 'next/font/google';
 import MotionProvider from '@/components/MotionProvider';
 import GoogleAds from '@/components/GoogleAds';
+import { STORES, storePath } from '@/lib/stores';
 import './globals.css';
 
 const notoSansTC = Noto_Sans_TC({
@@ -80,17 +81,8 @@ const jsonLd = {
   priceRange: '$$',
   areaServed: ['台北市', '新北市', '桃園市', '新竹市', '新竹縣', '台中市'],
   knowsAbout: ['室內裝修', '室內設計', '裝潢', '新成屋裝修', '舊屋翻新', '商業空間', '預售屋客變', '工程發包管理', '水電工程', '木作工程', '泥作磁磚', '油漆', '鋁窗隔音窗', '衛浴翻新', '廚具更換', '木地板', '拆除清運', '軟裝'],
-  department: [
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新北市五股店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新北市', streetAddress: '五股區新五路二段341號' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台北市東門店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台北市', streetAddress: '中正區信義路二段129號2樓' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新北市板橋店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新北市', streetAddress: '板橋區四川路一段268號' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新竹市光復店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新竹市', streetAddress: '東區光復路二段194巷16號' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 新竹竹北店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '新竹縣', streetAddress: '竹北市新光五街36號' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 桃園慈文店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '桃園市', streetAddress: '桃園區慈文路470號' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台中烏日店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台中市', streetAddress: '烏日區三榮路一段75號' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 台中水湳店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '台中市', streetAddress: '西屯區中清路二段1409號' } },
-    { '@type': 'HomeAndConstructionBusiness', name: '統包先生 桃園龜山店', address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: '桃園市', streetAddress: '龜山區文化七路182巷26弄1號' } },
-  ],
+  department: STORES.map((s) => ({ '@type': 'HomeAndConstructionBusiness', name: `統包先生 ${s.name}`, url: `${SITE}${storePath(s.slug)}`, address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: s.region, streetAddress: s.street } })),
+
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

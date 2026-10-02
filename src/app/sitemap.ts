@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { getProjects, projectPath } from '@/lib/projects';
+import { STORES, storePath } from '@/lib/stores';
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mrturnkey.com.tw';
 
-// 首頁 + 每個已發佈作品一個網址；Supabase 新增案子後自動進 sitemap
+// 首頁 + 9 間分店頁 + 每個已發佈作品一個網址；Supabase 新增案子後自動進 sitemap
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -15,6 +16,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 1,
     },
+    ...STORES.map((s) => ({
+      url: `${SITE}${storePath(s.slug)}`,
+      lastModified: new Date('2026-10-02'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     ...projects.map((p) => ({
       url: `${SITE}${projectPath(p.slug)}`,
       lastModified: p.updated_at ? new Date(p.updated_at) : new Date(),

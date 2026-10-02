@@ -1,19 +1,5 @@
 import Reveal from './Reveal';
-
-const STORES: { name: string; addr: string; area: string }[] = [
-  { name: '新北市五股店', addr: '新北市五股區新五路二段 341 號', area: '新北市北區、林口、泰山' },
-  { name: '台北市東門店', addr: '台北市中正區信義路二段 129 號 2 樓', area: '台北市中心、大安、信義' },
-  { name: '新北市板橋店', addr: '新北市板橋區四川路一段 268 號', area: '板橋、中和、永和、土城' },
-  { name: '新竹市光復店', addr: '新竹市東區光復路二段 194 巷 16 號', area: '新竹市、竹東' },
-  { name: '新竹竹北店', addr: '新竹縣竹北市新光五街 36 號', area: '竹北、新豐、湖口' },
-  { name: '桃園慈文店', addr: '桃園市桃園區慈文路 470 號', area: '桃園市各區' },
-  { name: '台中烏日店', addr: '台中市烏日區三榮路一段 75 號', area: '烏日、大里、霧峰' },
-  { name: '台中水湳店', addr: '台中市西屯區中清路二段 1409 號', area: '西屯、北屯、大雅' },
-  { name: '桃園龜山店', addr: '桃園市龜山區文化七路 182 巷 26 弄 1 號', area: '龜山、林口、八德' },
-];
-
-const mapUrl = (addr: string) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('統包先生 ' + addr)}`;
+import { STORES, storePath, mapUrl } from '@/lib/stores';
 
 export default function Locations() {
   return (
@@ -33,7 +19,7 @@ export default function Locations() {
       <div className="locations-grid">
         {STORES.map((s, i) => (
           <Reveal className="location-card" key={s.name} delay={(i % 3) * 0.06}>
-            <div className="location-name">🏪 {s.name}</div>
+            <a href={storePath(s.slug)} className="location-name" style={{ textDecoration: "none", color: "inherit" }}>🏪 {s.name}</a>
             <div className="location-row">
               <span className="location-icon">📍</span>
               <span className="location-info">{s.addr}</span>
@@ -42,7 +28,10 @@ export default function Locations() {
               <span className="location-icon">🗺️</span>
               <span className="location-info">服務區域：{s.area}</span>
             </div>
-            <a className="location-badge" href={mapUrl(s.addr)} target="_blank" rel="noopener noreferrer">查看地圖</a>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <a className="location-badge" href={storePath(s.slug)}>門市介紹</a>
+              <a className="location-badge" href={mapUrl(s.addr)} target="_blank" rel="noopener noreferrer">查看地圖</a>
+            </div>
           </Reveal>
         ))}
       </div>

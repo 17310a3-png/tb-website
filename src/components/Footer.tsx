@@ -7,7 +7,7 @@ const BRAND_LINKS: [string, string][] = [
   ['/#locations', '門市據點'],
   ['/#faq', '常見問題'],
 ];
-const STORE_LINKS = ['新北市五股店', '台北市東門店', '新北市板橋店', '新竹市光復店', '新竹竹北店', '桃園慈文店', '桃園龜山店', '台中烏日店', '台中水湳店'];
+import { STORES, storePath } from '@/lib/stores';
 
 export default function Footer() {
   return (
@@ -44,7 +44,7 @@ export default function Footer() {
         <div>
           <div className="footer-col-title">服務據點</div>
           <ul className="footer-links">
-            {STORE_LINKS.map((s) => <li key={s}><a href="/#locations">{s}</a></li>)}
+            {STORES.map((s) => <li key={s.slug}><a href={storePath(s.slug)}>{s.name}</a></li>)}
           </ul>
           <div style={{ marginTop: 20, padding: 14, background: 'var(--yellow-faint)', border: '1px solid rgba(249,185,27,0.15)' }}>
             <div style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.68rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 6 }}>CONTACT</div>
