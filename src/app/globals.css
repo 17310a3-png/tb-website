@@ -1696,8 +1696,10 @@
   /* 深色濾鏡：內嵌地圖無法設主題，用反轉 + 色相旋轉讓它配黑底；路名仍可讀 */
   filter: invert(0.92) hue-rotate(180deg) saturate(0.6) brightness(0.95) contrast(0.95);
 }
+.loc-gmap { flex: 1; width: 100%; min-height: 540px; background: #1c1b1b; }
 @media (max-width: 900px) {
   .loc-layout { grid-template-columns: 1fr; }
+  .loc-gmap { min-height: 360px; }
   .loc-list { max-height: 320px; }
   .loc-map { min-height: 420px; }
   .loc-map iframe { min-height: 360px; }
