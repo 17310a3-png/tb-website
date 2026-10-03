@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getArticles, articlePath, readMinutes, CATEGORY_ORDER } from '@/lib/articles';
+import { getArticles, articlePath, CATEGORY_ORDER } from '@/lib/articles';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import FloatCta from '@/components/FloatCta';
@@ -69,7 +69,6 @@ export default function ArticlesPage() {
                     <a href={articlePath(a.slug)} className="art-card">
                       <div className="art-card-meta">
                         <span>{a.date}</span>
-                        <span>約 {readMinutes(a.chars)} 分鐘</span>
                       </div>
                       <h2 className="art-card-title">{a.title}</h2>
                       <p className="art-card-desc">{a.description}</p>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getArticle, getArticles, articlePath, readMinutes } from '@/lib/articles';
+import { getArticle, getArticles, articlePath } from '@/lib/articles';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import FloatCta from '@/components/FloatCta';
@@ -96,7 +96,6 @@ export default async function ArticlePage({ params }: Params) {
           <Reveal>
             <p className="pp-meta">
               <span>{a.date}</span>
-              <span>約 {readMinutes(a.chars)} 分鐘</span>
               <span>統包先生</span>
             </p>
           </Reveal>
@@ -166,7 +165,7 @@ export default async function ArticlePage({ params }: Params) {
               {related.map((r, i) => (
                 <Reveal key={r.slug} delay={i * 0.06} as="div">
                   <a href={articlePath(r.slug)} className="art-card">
-                    <div className="art-card-meta"><span>{r.category}</span><span>約 {readMinutes(r.chars)} 分鐘</span></div>
+                    <div className="art-card-meta"><span>{r.category}</span><span>{r.date}</span></div>
                     <h2 className="art-card-title">{r.title}</h2>
                     <p className="art-card-desc">{r.description}</p>
                     <span className="art-card-more">閱讀全文 →</span>
