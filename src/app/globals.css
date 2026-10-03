@@ -1691,7 +1691,11 @@
 .loc-map-name { font-weight: 700; color: var(--white-pure); }
 .loc-map-addr { color: var(--light-gray); }
 .loc-map-open { margin-left: auto; color: var(--yellow); text-decoration: none; font-weight: 700; font-size: 0.78rem; white-space: nowrap; }
-.loc-map iframe { flex: 1; width: 100%; min-height: 540px; border: 0; display: block; }
+.loc-map iframe {
+  flex: 1; width: 100%; min-height: 540px; border: 0; display: block;
+  /* 深色濾鏡：內嵌地圖無法設主題，用反轉 + 色相旋轉讓它配黑底；路名仍可讀 */
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.6) brightness(0.95) contrast(0.95);
+}
 @media (max-width: 900px) {
   .loc-layout { grid-template-columns: 1fr; }
   .loc-list { max-height: 320px; }
