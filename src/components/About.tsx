@@ -26,7 +26,7 @@ export default function About() {
 
       <Reveal>
         <div className="eyebrow"><span className="eyebrow-text">About Us</span></div>
-        <h2 className="section-title">統包先生：<br />住宅全室裝修統包公司</h2>
+        <h2 className="section-title">住宅全室裝修統包</h2>
         <p className="section-body">
           統包先生做住宅全室裝修：新成屋、舊屋翻新、預售屋客變，也接商業空間。從設計、報價、發包到施工管理，由同一個團隊負責到完工交屋。
           目前 {STORES.length} 間門市，服務雙北、桃園、新竹、台中。

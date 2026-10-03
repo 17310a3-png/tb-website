@@ -41,9 +41,9 @@ export default function ArticlesPage() {
             </div>
           </Reveal>
           <Reveal className="eyebrow"><span className="eyebrow-text">Articles</span></Reveal>
-          <Reveal><h1 className="pp-title">裝修知識：<br />合約、預算、水電、木工、驗收、選材</h1></Reveal>
+          <Reveal><h1 className="pp-title">裝修知識</h1></Reveal>
           <Reveal>
-            <p className="pp-meta"><span>{articles.length} 篇</span><span>簽約前和開工前要知道的事，每篇都是現場經驗</span></p>
+            <p className="pp-meta"><span>{articles.length} 篇</span><span>合約、預算、水電、木工、驗收、選材，簽約前和開工前要知道的事</span></p>
           </Reveal>
         </header>
 

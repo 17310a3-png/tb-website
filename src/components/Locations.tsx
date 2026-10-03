@@ -7,11 +7,11 @@ export default function Locations() {
       <div className="locations-head">
         <div>
           <Reveal className="eyebrow"><span className="eyebrow-text">Locations</span></Reveal>
-          <Reveal><h2 className="section-title">裝修門市據點：<br />雙北、桃園、新竹、台中 {STORES.length} 間</h2></Reveal>
+          <Reveal><h2 className="section-title">裝修門市據點</h2></Reveal>
         </div>
         <Reveal>
           <p className="section-body" style={{ fontSize: '0.88rem', maxWidth: 360 }}>
-            統包先生持續拓展服務據點，讓更多客戶在更近的距離，獲得同樣專業且有制度的裝修服務。
+            {STORES.length} 間門市，服務雙北、桃園、新竹、台中。各店做法與標準相同，就近到店談最快。
           </p>
         </Reveal>
       </div>
