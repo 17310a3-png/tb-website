@@ -11,7 +11,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, gap: 32, flexWrap: 'wrap' }}>
         <div>
           <Reveal className="eyebrow"><span className="eyebrow-text">Portfolio</span></Reveal>
-          <Reveal><h2 className="section-title">室內裝修完工案例</h2></Reveal>
+          <Reveal><h2 className="section-title">室內裝修完工案例</h2><p className="section-sub">需求被聽懂，才會變成好用的家</p></Reveal>
         </div>
         <Reveal>
           <p className="section-body" style={{ fontSize: '0.88rem', maxWidth: 320 }}>

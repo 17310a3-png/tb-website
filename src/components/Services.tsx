@@ -16,7 +16,7 @@ export default function Services() {
       <div className="services-head">
         <div>
           <Reveal className="eyebrow"><span className="eyebrow-text">Services</span></Reveal>
-          <Reveal><h2 className="section-title">室內裝修服務項目</h2></Reveal>
+          <Reveal><h2 className="section-title">室內裝修服務項目</h2><p className="section-sub">從規劃到驗收，整合你需要的每一環</p></Reveal>
         </div>
         <Reveal>
           <p className="section-body" style={{ fontSize: '0.88rem' }}>
