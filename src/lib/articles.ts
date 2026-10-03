@@ -29,7 +29,7 @@ function fmtDate(v: unknown): string {
 }
 
 /** 分類顯示順序（README 的分法） */
-export const CATEGORY_ORDER = ['合約與預算', '工程知識', '施工與驗收', '規劃與設計', '選材與設備'];
+export const CATEGORY_ORDER = ['規劃與設計', '工程知識', '施工與驗收', '選材與設備', '合約與預算']; // 2026-10-03 老闆要求合約與預算排最後
 
 function readAll(): Article[] {
   if (!fs.existsSync(DIR)) return [];
