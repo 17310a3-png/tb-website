@@ -13,9 +13,6 @@ export default function Contact() {
           <div className="eyebrow"><span className="eyebrow-text">Contact</span></div>
           <h2 className="contact-tagline">預約裝修諮詢</h2>
           <p className="section-sub">把你的需求告訴我們，剩下的交給我們</p>
-          <p className="contact-sub">
-            準備交屋、想翻新舊屋，或只是想先知道預算大概多少，都可以先填表單。顧問會依你的房屋條件和所在區域回覆，第一次諮詢不收費。
-          </p>
           {LINE_URL && (
             <ConversionLink source="line-contact" className="contact-line-cta" href={LINE_URL} target="_blank" rel="noopener noreferrer">
               <div className="line-icon" aria-hidden="true">
