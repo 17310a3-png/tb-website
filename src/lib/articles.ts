@@ -69,8 +69,8 @@ function all(): Article[] {
   return cache;
 }
 
-/** 目前 draft 也會顯示（老闆要先看效果）；之後要只出 published 時把這個 filter 打開。 */
-const visible = (a: Article) => a.status === 'published' || a.status === 'draft';
+/** 只出 published；新文章先 draft 寫，審完改 published 才上站（2026-10-03 起） */
+const visible = (a: Article) => a.status === 'published';
 
 export function getArticles(): ArticleMeta[] {
   return all().filter(visible).map(({ html: _html, headings: _h, ...meta }) => meta);
