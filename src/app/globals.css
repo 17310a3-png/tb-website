@@ -741,6 +741,30 @@
   }
   .process-card:hover .process-card-line { background: var(--yellow); }
 
+
+  /* ── 流程箭頭（4 欄：1→2→3→4 ↵ 5→6→7→8；2 欄：每兩張一行） ── */
+  .process-arrow {
+    position: absolute; right: -15px; top: 50%; transform: translateY(-50%);
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--yellow); color: var(--black);
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem; font-weight: 800; line-height: 28px; text-align: center;
+    z-index: 3; box-shadow: 0 0 0 3px var(--dark);
+  }
+  .process-return {
+    display: none; position: absolute; top: -1px; left: 0; height: 2px;
+    width: calc(400% + 3px); background: var(--yellow); z-index: 2;
+  }
+  .process-turn {
+    display: none; position: absolute; top: -15px; left: 20px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--yellow); color: var(--black);
+    font-size: 1rem; font-weight: 900; line-height: 30px; text-align: center;
+    z-index: 3; box-shadow: 0 0 0 3px var(--dark);
+  }
+  .process-card:nth-child(4) .process-arrow, .process-card:nth-child(8) .process-arrow { display: none; }
+  .process-card:nth-child(5) .process-return, .process-card:nth-child(5) .process-turn { display: block; }
+
   /* ── WHY ── */
   #why {
     background: var(--near-black);
@@ -1389,6 +1413,11 @@
     .services-grid { grid-template-columns: 1fr 1fr; }
     .trades-grid { grid-template-columns: repeat(3, 1fr); }
     .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-card:nth-child(n) .process-arrow { display: block; }
+    .process-card:nth-child(2n) .process-arrow { display: none; }
+    .process-card:nth-child(n) .process-return, .process-card:nth-child(n) .process-turn { display: none; }
+    .process-card:nth-child(2n+1):not(:first-child) .process-return, .process-card:nth-child(2n+1):not(:first-child) .process-turn { display: block; }
+    .process-return { width: calc(200% + 1px); }
     .why-layout { grid-template-columns: 1fr; gap: 48px; }
     .why-right { position: static; }
     .proj-grid { grid-template-columns: repeat(2, 1fr); }

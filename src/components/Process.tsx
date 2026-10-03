@@ -34,6 +34,10 @@ export default function Process() {
               delay={(i % 4) * 0.07}
             >
               <div className="process-card-line" style={last ? { background: 'var(--yellow)' } : undefined} />
+              {/* 流程箭頭：→ 接下一步；行尾換行時用回頭線 + ↓ 接到下一行第一張。顯示與否由 CSS 依欄數決定 */}
+              <span className="process-arrow" aria-hidden="true">›</span>
+              <span className="process-return" aria-hidden="true" />
+              <span className="process-turn" aria-hidden="true">↓</span>
               <div className="process-card-num" style={last ? { color: 'var(--yellow)' } : undefined}>{num}</div>
               <div className="process-card-title" style={last ? { color: 'var(--yellow)' } : undefined}>{title}</div>
               <p className="process-card-desc">{desc}</p>
