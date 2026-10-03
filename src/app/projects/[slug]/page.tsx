@@ -96,7 +96,7 @@ export default async function ProjectPage({ params }: Params) {
             </div>
           </Reveal>
           <Reveal className="eyebrow"><span className="eyebrow-text">{p.category}</span></Reveal>
-          <Reveal><h1 className="pp-title">{p.name}</h1></Reveal>
+          <Reveal><h1 className="pp-title">{p.name}<span className="pp-title-sub">{p.category}案例</span></h1></Reveal>
           <Reveal>
             <p className="pp-meta">
               {hasLocation(p) && <span>{p.location}</span>}

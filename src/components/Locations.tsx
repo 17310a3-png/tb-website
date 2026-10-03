@@ -7,7 +7,7 @@ export default function Locations() {
       <div className="locations-head">
         <div>
           <Reveal className="eyebrow"><span className="eyebrow-text">Locations</span></Reveal>
-          <Reveal><h2 className="section-title">把服務做近，<br />也把標準做穩</h2></Reveal>
+          <Reveal><h2 className="section-title">裝修門市據點：<br />雙北、桃園、新竹、台中 {STORES.length} 間</h2></Reveal>
         </div>
         <Reveal>
           <p className="section-body" style={{ fontSize: '0.88rem', maxWidth: 360 }}>

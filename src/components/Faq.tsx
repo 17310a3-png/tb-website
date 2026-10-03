@@ -12,7 +12,7 @@ export default function Faq() {
       <div className="faq-layout">
         <div className="faq-sticky">
           <Reveal className="eyebrow"><span className="eyebrow-text">FAQ</span></Reveal>
-          <Reveal><h2 className="section-title">常見<br />問題</h2></Reveal>
+          <Reveal><h2 className="section-title">裝修<br />常見問題</h2></Reveal>
           <Reveal>
             <p className="section-body" style={{ marginTop: 16, fontSize: '0.88rem' }}>
               有任何疑問，都可以先與我們諮詢。好的裝修，從一次清楚的溝通開始。

@@ -48,7 +48,7 @@
 | `src/app/sitemap.ts` / `robots.ts` | SEO（sitemap 已提交 Google Search Console） |
 | `src/app/api/contact/route.ts` | 詢問表單 endpoint → 寫 `website.inquiries` |
 | `src/lib/projects.ts` | 從 Supabase 讀 `website.projects`（作品集資料源） |
-| `src/components/Hero / About / Services / Why / Process` | landing 各段落 |
+| `src/components/Hero / About / Services / Process` | landing 各段落（About 已併入原 Why 的「我們怎麼做事」5 點，2026-10-03） |
 | `src/components/Portfolio / PortfolioGrid` | 作品集（橫向捲動 + lightbox） |
 | `src/components/Locations` | 9 分店據點卡片（資料來自 `lib/stores.ts`，卡片連到分店頁） |
 | `src/components/Contact / Faq / Footer / Nav` | 聯絡 / 常見問題 / 頁尾 / 導航 |

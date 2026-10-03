@@ -17,7 +17,7 @@ export default function Process() {
       <div className="process-bg-word">FLOW</div>
       <Reveal className="process-head">
         <div className="eyebrow"><span className="eyebrow-text">Our Process</span></div>
-        <h2 className="section-title">好的裝修，過程一樣清楚</h2>
+        <h2 className="section-title">裝修流程 8 個步驟：從諮詢、丈量到完工驗收</h2>
         <p className="section-body" style={{ margin: '0 auto', textAlign: 'center' }}>
           每一個節點都有明確的負責人與進度確認，讓你在整個過程中不需要猜測，只需要安心。
         </p>

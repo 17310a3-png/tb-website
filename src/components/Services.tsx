@@ -16,7 +16,7 @@ export default function Services() {
       <div className="services-head">
         <div>
           <Reveal className="eyebrow"><span className="eyebrow-text">Services</span></Reveal>
-          <Reveal><h2 className="section-title">從規劃到驗收，<br />整合你需要的每一環</h2></Reveal>
+          <Reveal><h2 className="section-title">室內裝修服務：<br />新成屋、舊屋翻新、預售屋客變、商業空間</h2></Reveal>
         </div>
         <Reveal>
           <p className="section-body" style={{ fontSize: '0.88rem' }}>
@@ -39,7 +39,7 @@ export default function Services() {
       <div className="trades">
         <Reveal className="trades-head">
           <div className="eyebrow"><span className="eyebrow-text">Trades</span></div>
-          <h3 className="trades-title">工程項目</h3>
+          <h3 className="trades-title">全室裝修工程項目：水電、木作、泥作、衛浴、廚具、地板</h3>
           <p className="section-body" style={{ fontSize: '0.88rem' }}>
             全室裝修涉及的各項工程，由統包先生統一發包、排程與現場管理。你只需要面對一個窗口。
           </p>

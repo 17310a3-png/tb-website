@@ -11,9 +11,9 @@ export default function Contact() {
       <div className="contact-layout">
         <Reveal>
           <div className="eyebrow"><span className="eyebrow-text">Contact</span></div>
-          <div className="contact-tagline">把你的需求告訴我們，<br />剩下的，讓專業來接手。</div>
+          <h2 className="contact-tagline">預約裝修諮詢</h2>
           <p className="contact-sub">
-            無論你正在準備交屋、規劃翻新，或只是想先釐清預算與方向，都歡迎先與統包先生聊聊。一次清楚的諮詢，能讓後面的每一步少一點摸索，多一點安心。
+            準備交屋、想翻新舊屋，或只是想先知道預算大概多少，都可以先填表單。顧問會依你的房屋條件和所在區域回覆，第一次諮詢不收費。
           </p>
           {LINE_URL && (
             <ConversionLink source="line-contact" className="contact-line-cta" href={LINE_URL} target="_blank" rel="noopener noreferrer">

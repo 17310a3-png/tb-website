@@ -7,7 +7,6 @@ const LINKS = [
   ['/#services', '服務項目'],
   ['/#process', '服務流程'],
   ['/#portfolio', '作品案例'],
-  ['/#why', '為何選擇'],
   ['/#locations', '門市據點'],
   ['/articles', '裝修知識'],
   ['/#faq', '常見問題'],

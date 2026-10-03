@@ -6,7 +6,6 @@ import About from '@/components/About';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import Portfolio from '@/components/Portfolio';
-import Why from '@/components/Why';
 import Marquee from '@/components/Marquee';
 import Locations from '@/components/Locations';
 import Faq from '@/components/Faq';
@@ -41,7 +40,6 @@ export default async function Home() {
       <Services />
       <Process />
       <Portfolio projects={projects} />
-      <Why />
       <Marquee />
       <Locations />
       <Faq />

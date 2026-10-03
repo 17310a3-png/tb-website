@@ -1,4 +1,15 @@
 import Reveal from './Reveal';
+import { STORES } from '@/lib/stores';
+
+/** 關於我們＋為何選擇 合併成一區（2026-10-03，老師回饋兩區內容重複）。
+ *  左：團隊照片；右：公司是做什麼的（事實）＋ 我們怎麼做事（原 Why 的 5 點，去掉口號）。 */
+const HOW = [
+  ['先聽需求，再談做法', '第一次見面不談成交，先弄清楚屋況、預算和你最在意的事，再給建議。'],
+  ['設計和施工同一個團隊', '畫圖的人知道現場怎麼做，施工的人看得懂圖，圖面到現場不會接不起來。'],
+  ['靠制度，不靠某一個人', '流程、分工、節點驗收都有標準，案子不會因為換了負責人就走樣。'],
+  ['一個窗口對到底', '水電、木作、泥作、廚具、衛浴由我們發包和排程，你不用自己追工班。'],
+  ['完工後還找得到人', '交屋後的修繕、使用問題照樣處理，客戶大多是住了幾年再回來找我們做第二間。'],
+];
 
 export default function About() {
   return (
@@ -15,15 +26,22 @@ export default function About() {
 
       <Reveal>
         <div className="eyebrow"><span className="eyebrow-text">About Us</span></div>
-        <h2 className="section-title">我們相信，裝修不只是<br />完成空間</h2>
+        <h2 className="section-title">統包先生：<br />住宅全室裝修統包公司</h2>
         <p className="section-body">
-          統包先生是一個以住宅裝修為主軸的整合型品牌。我們服務的，不只是空間本身，更是客戶從收屋、規劃、施工到入住後的整體體驗。
-          <br /><br />
-          透過明確的顧問接洽流程、設計與工務分工、標準化施工管理與多門市服務系統，讓每一位客戶都能更清楚知道：現在進行到哪裡、接下來會發生什麼、每一筆預算花在哪裡。
+          統包先生做住宅全室裝修：新成屋、舊屋翻新、預售屋客變，也接商業空間。從設計、報價、發包到施工管理，由同一個團隊負責到完工交屋。
+          目前 {STORES.length} 間門市，服務雙北、桃園、新竹、台中。
         </p>
-        <div className="about-values">
-          {['誠信透明', '專業整合', '責任到位', '長期陪伴'].map((t) => (
-            <div className="value-tag" key={t}>{t}</div>
+
+        <div className="about-how">
+          <div className="about-how-title">我們怎麼做事</div>
+          {HOW.map(([title, desc], i) => (
+            <div className="why-item" key={title}>
+              <div className="why-num">{String(i + 1).padStart(2, '0')}</div>
+              <div>
+                <div className="why-item-title">{title}</div>
+                <p className="why-item-desc">{desc}</p>
+              </div>
+            </div>
           ))}
         </div>
       </Reveal>

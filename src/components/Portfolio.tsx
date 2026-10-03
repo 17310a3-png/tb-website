@@ -11,11 +11,11 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, gap: 32, flexWrap: 'wrap' }}>
         <div>
           <Reveal className="eyebrow"><span className="eyebrow-text">Portfolio</span></Reveal>
-          <Reveal><h2 className="section-title">每一個完工，<br />都是需求被真正理解的結果</h2></Reveal>
+          <Reveal><h2 className="section-title">室內裝修完工案例</h2></Reveal>
         </div>
         <Reveal>
           <p className="section-body" style={{ fontSize: '0.88rem', maxWidth: 320 }}>
-            好的作品不只是好看，更要能回應屋主的生活方式。以下是我們的實際完工案例。
+            {projects.length} 個完工現場，照片都是交屋時拍的。點進去看地點、風格和這個案子做了什麼。
           </p>
         </Reveal>
       </div>

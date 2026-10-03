@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { STORES, getStore, storePath, mapUrl } from '@/lib/stores';
 import { getProjects, projectPath, hasLocation } from '@/lib/projects';
-import { TRADES } from '@/lib/trades';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import FloatCta from '@/components/FloatCta';
@@ -133,18 +132,13 @@ export default async function StorePage({ params }: Params) {
           </Reveal>
         </div>
 
-        <section className="sp-trades" aria-label="工程項目">
-          <Reveal><h2 className="pp-h2">{s.district}裝修我們承接的工程</h2></Reveal>
-          <div className="sp-trades-grid">
-            {TRADES.map(([name, desc], i) => (
-              <Reveal key={name} className="sp-trade" delay={(i % 2) * 0.05}>
-                <div className="sp-trade-name">{name}</div>
-                <div className="sp-trade-desc">{desc}</div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal><p className="sp-note">目前僅承接全室裝修，不單獨承接局部工程；全室翻新時上列項目會一併納入規劃與排程。</p></Reveal>
-        </section>
+        <Reveal>
+          <p className="sp-note">
+            {s.short}承接的項目和其他門市相同：住宅全室裝修（新成屋、舊屋翻新、預售屋客變）與商業空間，不單獨承接局部工程。
+            工程內容見 <a href="/#services">服務項目</a>。
+          </p>
+        </Reveal>
+
 
         {cases.length > 0 && (
           <section className="pp-related" aria-label="完工案例">
