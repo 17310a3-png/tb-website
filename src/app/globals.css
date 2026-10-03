@@ -584,7 +584,7 @@
   .service-num {
     font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
     font-size: 3.5rem;
-    color: rgba(249,185,27,0.08);
+    color: rgba(249,185,27,0.32); /* 2026-10-03 由 0.08 調亮，原本幾乎看不見 */
     line-height: 1;
     margin-bottom: 12px;
     letter-spacing: 0.04em;
