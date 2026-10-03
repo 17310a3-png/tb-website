@@ -1,7 +1,19 @@
+'use client';
+
+import { useState } from 'react';
 import Reveal from './Reveal';
 import { STORES, storePath, mapUrl } from '@/lib/stores';
 
+/** 門市據點：左邊 9 店清單（點選切換），右邊 Google 地圖跳到該店。
+ *  地圖用 Google Maps 的 output=embed 內嵌，不需要 API key。
+ *  店名與地址都是真正的 <a>/文字，Google 抓首頁時看得到 9 間門市與分店頁連結。 */
+const embedUrl = (addr: string) =>
+  `https://maps.google.com/maps?q=${encodeURIComponent('統包先生 ' + addr)}&z=16&hl=zh-TW&output=embed`;
+
 export default function Locations() {
+  const [active, setActive] = useState(0);
+  const s = STORES[active];
+
   return (
     <section id="locations">
       <div className="locations-head">
@@ -16,32 +28,41 @@ export default function Locations() {
         </Reveal>
       </div>
 
-      <div className="locations-grid">
-        {STORES.map((s, i) => (
-          <Reveal className="location-card" key={s.name} delay={(i % 3) * 0.06}>
-            <a href={storePath(s.slug)} className="location-name" style={{ textDecoration: "none", color: "inherit" }}>🏪 {s.name}</a>
-            <div className="location-row">
-              <span className="location-icon">📍</span>
-              <span className="location-info">{s.addr}</span>
-            </div>
-            <div className="location-row">
-              <span className="location-icon">🗺️</span>
-              <span className="location-info">服務區域：{s.area}</span>
-            </div>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <a className="location-badge" href={storePath(s.slug)}>門市介紹</a>
-              <a className="location-badge" href={mapUrl(s.addr)} target="_blank" rel="noopener noreferrer">查看地圖</a>
-            </div>
-          </Reveal>
-        ))}
-      </div>
+      <Reveal y={0}>
+        <div className="loc-layout">
+          <ul className="loc-list" aria-label="門市清單">
+            {STORES.map((st, i) => (
+              <li key={st.slug}>
+                <button
+                  type="button"
+                  className={`loc-item${i === active ? ' active' : ''}`}
+                  onClick={() => setActive(i)}
+                  aria-pressed={i === active}
+                >
+                  <span className="loc-item-name">{st.name}</span>
+                  <span className="loc-item-addr">{st.addr}</span>
+                  <span className="loc-item-area">{st.area}</span>
+                </button>
+                <a href={storePath(st.slug)} className="loc-item-link">門市介紹 →</a>
+              </li>
+            ))}
+          </ul>
 
-      <Reveal>
-        <div style={{ marginTop: 24, border: '1px solid var(--border)', padding: '20px 28px', display: 'flex', alignItems: 'center', gap: 16 }}>
-          <span style={{ fontSize: '1.2rem' }}>📡</span>
-          <span style={{ fontSize: '0.85rem', color: 'var(--gray)' }}>
-            目前 9 間門市，服務範圍涵蓋雙北、桃園、新竹、台中。統包先生持續拓展，讓每一個城市都有離你最近的裝修夥伴。
-          </span>
+          <div className="loc-map">
+            <div className="loc-map-head">
+              <span className="loc-map-name">{s.name}</span>
+              <span className="loc-map-addr">{s.addr}</span>
+              <a href={mapUrl(s.addr)} target="_blank" rel="noopener noreferrer" className="loc-map-open">在 Google 地圖開啟 →</a>
+            </div>
+            <iframe
+              key={s.slug}
+              src={embedUrl(s.addr)}
+              title={`${s.name} 地圖`}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </Reveal>
     </section>

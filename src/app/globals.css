@@ -1673,3 +1673,28 @@
   .rev-score-link { margin-left: 0; }
   .art-section-head:has(.rev-note) { flex-direction: column; gap: 8px; }
 }
+
+/* ── 門市據點：左清單 / 右地圖 ── */
+.loc-layout { display: grid; grid-template-columns: minmax(300px, 1fr) 1.4fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.loc-list { list-style: none; margin: 0; padding: 0; background: var(--near-black); max-height: 600px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border-bright) transparent; }
+.loc-list li { position: relative; border-bottom: 1px solid var(--border); }
+.loc-item { display: flex; flex-direction: column; gap: 4px; width: 100%; padding: 18px 110px 18px 24px; background: none; border: 0; border-left: 3px solid transparent; text-align: left; cursor: pointer; color: inherit; font: inherit; transition: background 0.2s, border-color 0.2s; }
+.loc-item:hover { background: rgba(249,185,27,0.04); }
+.loc-item.active { border-left-color: var(--yellow); background: rgba(249,185,27,0.07); }
+.loc-item-name { font-size: 1rem; font-weight: 700; color: var(--white-pure); letter-spacing: 0.04em; }
+.loc-item-addr { font-size: 0.82rem; color: var(--light-gray); }
+.loc-item-area { font-size: 0.76rem; color: var(--gray); }
+.loc-item-link { position: absolute; right: 20px; top: 20px; font-size: 0.74rem; color: var(--yellow); text-decoration: none; font-weight: 700; letter-spacing: 0.08em; white-space: nowrap; }
+.loc-item-link:hover { text-decoration: underline; }
+.loc-map { background: var(--near-black); position: relative; min-height: 600px; display: flex; flex-direction: column; }
+.loc-map-head { display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+.loc-map-name { font-weight: 700; color: var(--white-pure); }
+.loc-map-addr { color: var(--light-gray); }
+.loc-map-open { margin-left: auto; color: var(--yellow); text-decoration: none; font-weight: 700; font-size: 0.78rem; white-space: nowrap; }
+.loc-map iframe { flex: 1; width: 100%; min-height: 540px; border: 0; display: block; }
+@media (max-width: 900px) {
+  .loc-layout { grid-template-columns: 1fr; }
+  .loc-list { max-height: 320px; }
+  .loc-map { min-height: 420px; }
+  .loc-map iframe { min-height: 360px; }
+}
