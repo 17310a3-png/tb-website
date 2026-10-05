@@ -50,7 +50,7 @@
 | `src/lib/projects.ts` | 從 Supabase 讀 `website.projects`（作品集資料源） |
 | `src/components/Hero / About / Services / Process` | landing 各段落（About 已併入原 Why 的「我們怎麼做事」5 點，2026-10-03） |
 | `src/components/Portfolio / PortfolioGrid` | 作品集（橫向捲動 + lightbox） |
-| `src/components/Locations` | 9 分店據點卡片（資料來自 `lib/stores.ts`，卡片連到分店頁） |
+| `src/components/Locations` + `StoreMap.tsx` | 門市據點：左 9 店清單（點選切換）/ 右 Google 地圖（Maps JS API 深色主題 + 黃圖釘，座標寫死在 `stores.ts`；無金鑰時退回 iframe）。資料來自 `lib/stores.ts`，店名連到分店頁 |
 | `src/components/Contact / Faq / Footer / Nav` | 聯絡 / 常見問題 / 頁尾 / 導航 |
 | `src/components/Marquee / NumbersStrip / FloatCta / Reveal` | 跑馬燈 / 數據條 / 浮動 CTA / 進場動畫 wrapper |
 | `src/app/locations/[slug]/page.tsx` + `src/lib/stores.ts` | **9 間分店頁**（在地 SEO：`竹北室內裝修｜統包先生竹北店` 這類標題）。門市資料單一來源在 `stores.ts`（Locations 卡片 / Footer / sitemap / layout JSON-LD 都讀它）；完工案例**不綁分店**（以 slug 當種子穩定打散、每店固定 6 組、各店組合不同）。新增門市只改 `stores.ts` 一處 |
@@ -71,7 +71,7 @@
 
 ## 部署（auto-deploy 已通 ✓）
 
-~~曾記載「MCP 建的 service 無 webhook、push 後要手動重建」~~ → **2026-07-13 稽核實證已解除**：push 後 5 秒內自動觸發部署（實證：commit `7e9ef51` 16:33:40 → 部署 16:33:45）。現在 `git push` 即自動部署，與其他子系統相同。詳見母 `docs/ZEABUR_AUDIT_2026-07-13.md`。
+~~曾記載「MCP 建的 service 無 webhook、push 後要手動重建」~~ → **2026-07-13 稽核實證已解除**：push 後 5 秒內自動觸發部署（實證：commit `7e9ef51` 16:33:40 → 部署 16:33:45）。現在 `git push` 即自動部署，與其他子系統相同。⚠️ 但**不是每次都觸發**：2026-10-03 連推 7 個 commit，前 5 個有建、最後 2 個「chore 重新觸發」完全沒出現在 deployment list，而且中間一次 build 因 Zeabur 抓 Google Fonts 失敗而 FAILED，結果 15 篇文章重寫在線上缺席了兩天沒人發現。**push 後務必跑 `zeabur deployment list` 確認最新 commit 是 RUNNING**，沒有就手動 `service redeploy`。詳見母 `docs/ZEABUR_AUDIT_2026-07-13.md`。
 
 ## 開發指令
 
