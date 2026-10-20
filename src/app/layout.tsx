@@ -26,7 +26,7 @@ const barlowCondensed = Barlow_Condensed({
   variable: '--font-barlow',
 });
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://tb-website.zeabur.app';
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mrturnkey.com.tw';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
