@@ -1,5 +1,7 @@
 # tb-website — 統包先生品牌官網
 
+> **部署（2026-10-19 起）**：Contabo + Coolify，正式網址 **https://www.mrturnkey.com.tw**，push 到 main 自動部署（後台 https://coolify.mrturnkey.com.tw）。下文提到的 Zeabur project / ID / `*.zeabur.app` 是舊機資料，Zeabur 2026-12-31 關閉後作廢。服務表與維運指令見母資料夾 `工具-zeabur伺服器維運/coolify.json`、`MIGRATION_STATUS_2026-10.md`。
+
 統包先生 MR.TURNKEY 對外品牌官網。作品集用 Supabase 當 CMS，可自助新增免重部署。
 
 ## 基本資訊
