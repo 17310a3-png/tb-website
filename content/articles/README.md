@@ -22,6 +22,11 @@
 | 選材與設備 | `ac-brands-4-tiers` | 冷氣四大梯隊怎麼選 | 冷氣攻略.jpg |
 | 選材與設備 | `washing-machine-5-traps` | 買洗衣機前這 5 個地雷 | 買洗衣機.jpg |
 | 選材與設備 | `mattress-buying-order` | 買床的順序表 | ChatGPT Image 2026年9月9日.png |
+| 規劃與設計 | `wardrobe-7-points` | 主臥衣櫃的 7 個設計重點 | S__8814610_0.jpg（2026-11-10） |
+| 規劃與設計 | `bedroom-redo-7` | 臥室重新裝修，這 7 個地方值得改 | S__9093125_0.jpg（2026-11-10） |
+| 規劃與設計 | `timeless-design-18` | 裝修怎麼做才不容易過時 | S__9625603_0.jpg（2026-11-10） |
+| 選材與設備 | `water-heater-4-types` | 熱水器怎麼選 | S__8888324_0.jpg（2026-11-10） |
+| 選材與設備 | `fridge-5-checks` | 買冰箱前先確認的 5 件事 | S__9330695_0.jpg（2026-11-10） |
 
 ## 寫法原則
 
