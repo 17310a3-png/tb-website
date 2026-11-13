@@ -17,15 +17,15 @@
 ## 門市據點
 
 - [門市總覽](https://www.mrturnkey.com.tw/#locations): 查詢門市與服務區域。
-- [新北市五股店](https://www.mrturnkey.com.tw/locations/wugu): 新北市五股區新五路二段 341 號；服務新北市全區，五股、蘆洲、泰山、林口、八里為主
-- [新北市板橋店](https://www.mrturnkey.com.tw/locations/banqiao): 新北市板橋區四川路一段 268 號；服務新北市全區，板橋、中和、永和、土城、樹林為主
-- [台北市東門店](https://www.mrturnkey.com.tw/locations/dongmen): 台北市中正區信義路二段 129 號 2 樓；服務台北市全區，大安、中正、信義、中山、松山、南港、內湖為主
-- [桃園慈文店](https://www.mrturnkey.com.tw/locations/ciwen): 桃園市桃園區慈文路 470 號；服務桃園市全區，桃園區、八德、蘆竹、大園、中壢、平鎮為主
-- [桃園龜山店](https://www.mrturnkey.com.tw/locations/guishan): 桃園市龜山區文化七路 182 巷 26 弄 1 號；服務桃園市全區，龜山、林口、A7 重劃區、迴龍為主
-- [新竹市光復店](https://www.mrturnkey.com.tw/locations/guangfu): 新竹市東區光復路二段 194 巷 16 號；服務新竹縣市全區，新竹市東區、北區、香山、竹東、寶山為主
-- [新竹竹北店](https://www.mrturnkey.com.tw/locations/zhubei): 新竹縣竹北市新光五街 36 號；服務新竹縣市全區，竹北、新豐、湖口、新埔、芎林為主
-- [台中烏日店](https://www.mrturnkey.com.tw/locations/wuri): 台中市烏日區三榮路一段 75 號；服務台中市全區，烏日、大里、霧峰、南區、南屯為主
-- [台中水湳店](https://www.mrturnkey.com.tw/locations/shuinan): 台中市西屯區中清路二段 1409 號；服務台中市全區，西屯、北屯、大雅、北區、潭子為主
+- [新北市五股店](https://www.mrturnkey.com.tw/locations/wugu): 新北市五股區新五路二段 341 號；服務五股、蘆洲、泰山、林口、八里
+- [新北市板橋店](https://www.mrturnkey.com.tw/locations/banqiao): 新北市板橋區四川路一段 268 號；服務板橋、中和、永和、土城、樹林
+- [台北市東門店](https://www.mrturnkey.com.tw/locations/dongmen): 台北市中正區信義路二段 129 號 2 樓；服務大安、中正、信義、中山、松山、南港、內湖
+- [桃園慈文店](https://www.mrturnkey.com.tw/locations/ciwen): 桃園市桃園區慈文路 470 號；服務桃園區、八德、蘆竹、大園、中壢、平鎮
+- [桃園龜山店](https://www.mrturnkey.com.tw/locations/guishan): 桃園市龜山區文化七路 182 巷 26 弄 1 號；服務龜山、林口、A7 重劃區、迴龍
+- [新竹市光復店](https://www.mrturnkey.com.tw/locations/guangfu): 新竹市東區光復路二段 194 巷 16 號；服務新竹市東區、北區、香山、竹東、寶山
+- [新竹竹北店](https://www.mrturnkey.com.tw/locations/zhubei): 新竹縣竹北市新光五街 36 號；服務竹北、新豐、湖口、新埔、芎林
+- [台中烏日店](https://www.mrturnkey.com.tw/locations/wuri): 台中市烏日區三榮路一段 75 號；服務烏日、大里、霧峰、南區、南屯
+- [台中水湳店](https://www.mrturnkey.com.tw/locations/shuinan): 台中市西屯區中清路二段 1409 號；服務西屯、北屯、大雅、北區、潭子
 
 ## 作品案例
 
