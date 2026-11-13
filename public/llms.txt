@@ -1,0 +1,46 @@
+# 統包先生 MR.TURNKEY
+
+> 統包先生 MR.TURNKEY 是台灣的室內裝修統包品牌，以住宅全室裝修為主，涵蓋新成屋裝修、舊屋翻新、預售屋客變，也承接商業空間。從丈量、設計、報價、施工管理到完工驗收與售後，由同一團隊統籌。
+
+- 承接範圍：衛浴翻新與廚房改造可納入全室裝修。單獨的衛浴、廚房等局部工程目前不承接。僅委託設計或施工，可依個案評估。
+- 報價方式：依坪數、屋況、工程範圍與材料需求評估，請透過官方管道預約諮詢。
+- 門市分布：台北、新北、桃園、新竹與台中。各店地址與服務區域請見據點頁。
+
+## 服務與預約
+
+- [室內裝修服務項目](https://www.mrturnkey.com.tw/#services): 新成屋、舊屋翻新、預售屋客變與商業空間的服務內容，以及全室裝修可包含的工程。
+- [裝修流程](https://www.mrturnkey.com.tw/#process): 從初步諮詢、現場丈量、規劃與報價，到簽約、施工、驗收與售後的八個步驟。
+- [裝修常見問題](https://www.mrturnkey.com.tw/#faq): 官網整理的服務、預算與裝修問答。
+- [聯絡與預約](https://www.mrturnkey.com.tw/#contact): 官方聯絡資訊與預約入口。
+- [線上預約表單](https://www.surveycake.com/s/Ad81e): 提交裝修諮詢需求。
+
+## 門市據點
+
+- [門市總覽](https://www.mrturnkey.com.tw/#locations): 查詢門市與服務區域。
+- [新北市五股店](https://www.mrturnkey.com.tw/locations/wugu): 新北市五股區新五路二段 341 號；服務新北市全區，五股、蘆洲、泰山、林口、八里為主
+- [新北市板橋店](https://www.mrturnkey.com.tw/locations/banqiao): 新北市板橋區四川路一段 268 號；服務新北市全區，板橋、中和、永和、土城、樹林為主
+- [台北市東門店](https://www.mrturnkey.com.tw/locations/dongmen): 台北市中正區信義路二段 129 號 2 樓；服務台北市全區，大安、中正、信義、中山、松山、南港、內湖為主
+- [桃園慈文店](https://www.mrturnkey.com.tw/locations/ciwen): 桃園市桃園區慈文路 470 號；服務桃園市全區，桃園區、八德、蘆竹、大園、中壢、平鎮為主
+- [桃園龜山店](https://www.mrturnkey.com.tw/locations/guishan): 桃園市龜山區文化七路 182 巷 26 弄 1 號；服務桃園市全區，龜山、林口、A7 重劃區、迴龍為主
+- [新竹市光復店](https://www.mrturnkey.com.tw/locations/guangfu): 新竹市東區光復路二段 194 巷 16 號；服務新竹縣市全區，新竹市東區、北區、香山、竹東、寶山為主
+- [新竹竹北店](https://www.mrturnkey.com.tw/locations/zhubei): 新竹縣竹北市新光五街 36 號；服務新竹縣市全區，竹北、新豐、湖口、新埔、芎林為主
+- [台中烏日店](https://www.mrturnkey.com.tw/locations/wuri): 台中市烏日區三榮路一段 75 號；服務台中市全區，烏日、大里、霧峰、南區、南屯為主
+- [台中水湳店](https://www.mrturnkey.com.tw/locations/shuinan): 台中市西屯區中清路二段 1409 號；服務台中市全區，西屯、北屯、大雅、北區、潭子為主
+
+## 作品案例
+
+- [完工作品總覽](https://www.mrturnkey.com.tw/#portfolio): 查看住宅與商業空間的完工案例。
+- [台北市大安區張宅｜現代簡約 × 黑框玻璃廚房](https://www.mrturnkey.com.tw/projects/heping-east): 精選案例，住宅全室裝修
+- [新北市中和區辦公室](https://www.mrturnkey.com.tw/projects/zhonghe-office): 商業空間
+- [台中市烏日區鋼琴教室](https://www.mrturnkey.com.tw/projects/wuri-piano): 商業空間
+
+## 裝修知識
+
+- [14 坪老屋全室翻新費用案例](https://www.mrturnkey.com.tw/articles/renovation-14ping-cost): 拆解該案 201 萬元的實際費用。其他案件依屋況與工程範圍個別報價。
+- [裝修合約要寫清楚的 9 件事](https://www.mrturnkey.com.tw/articles/contract-9-traps): 簽約前應確認的合約項目。
+- [完工驗收 11 項檢查清單](https://www.mrturnkey.com.tw/articles/handover-checklist-11): 付清尾款前的驗收檢查項目。
+
+## Optional
+
+- [裝修知識文章總覽](https://www.mrturnkey.com.tw/articles): 裝修規劃、施工、驗收、選材與預算文章。
+- [Sitemap](https://www.mrturnkey.com.tw/sitemap.xml): 全站網址清單。
