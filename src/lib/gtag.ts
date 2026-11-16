@@ -10,12 +10,16 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: Gtag;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
 /** 回報一次 Google Ads 轉換（預約諮詢意圖：點 SurveyCake 表單 / LINE） */
 export function reportConversion(source: string) {
-  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+  if (typeof window === 'undefined') return;
+  // Meta 像素：同一個預約意圖送 Lead
+  if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: source });
+  if (typeof window.gtag !== 'function') return;
   window.gtag('event', 'conversion', {
     send_to: `${GADS_ID}/${GADS_CONVERSION_LABEL}`,
     event_category: 'lead',

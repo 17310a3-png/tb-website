@@ -58,6 +58,7 @@
 | `src/app/locations/[slug]/page.tsx` + `src/lib/stores.ts` | **9 間分店頁**（在地 SEO：`竹北室內裝修｜統包先生竹北店` 這類標題）。門市資料單一來源在 `stores.ts`（Locations 卡片 / Footer / sitemap / layout JSON-LD 都讀它）；完工案例**不綁分店**（以 slug 當種子穩定打散、每店固定 6 組、各店組合不同）。新增門市只改 `stores.ts` 一處 |
 | `src/components/GoogleAds.tsx` / `ConversionLink.tsx` / `src/lib/gtag.ts` | Google Ads 全域代碼（`AW-18429852534`）+ 轉換回報：點 SurveyCake 表單鈕 / LINE CTA 時打 `send_to` 轉換標籤（2026-09-10 行銷公司投關鍵字用，可用 env `NEXT_PUBLIC_GADS_ID` / `NEXT_PUBLIC_GADS_CONVERSION_LABEL` 覆寫） |
 | `src/components/GoogleTagManager.tsx` | **GTM 容器 `GTM-TFBT9HW7`**（2026-11-12 行銷顧問 c2me 提供，GA4 在 GTM 後台設，不改網站）。Ads 轉換仍由 GoogleAds.tsx 直接發，GTM 若也設 Ads 轉換會重複計算 |
+| `src/components/MetaPixel.tsx` | **Meta 像素 `4678064539117234`**（2026-11-16 顧問 Sony 提供，資料集已連結企業管理平台 mr.turnkey）。PageView 全站；點預約／LINE 時 `reportConversion()` 同時送 `fbq('track','Lead')`。轉換 API（伺服器端）待顧問給 token，建議從 n8n 收 SurveyCake 填單時回傳 |
 | `next.config.mjs` | standalone 輸出 + Supabase 圖片 host 白名單 |
 | `Dockerfile` | Zeabur 部署 |
 

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_TC, Bebas_Neue, Barlow_Condensed } from 'next/font/google';
 import MotionProvider from '@/components/MotionProvider';
 import GoogleAds from '@/components/GoogleAds';
+import MetaPixel from '@/components/MetaPixel';
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/GoogleTagManager';
 import { STORES, storePath } from '@/lib/stores';
 import './globals.css';
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MotionProvider>{children}</MotionProvider>
         <GoogleTagManager />
         <GoogleAds />
+        <MetaPixel />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>
