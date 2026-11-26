@@ -2,7 +2,7 @@
  *  intro 每店手寫、不套模板，是分店頁能被 Google 當成「不同頁」而不是複製頁的關鍵。 */
 export type Store = {
   slug: string;
-  /** 完整店名，例：新北市板橋店 */
+  /** 完整店名，例：新北板橋店（縣市名不加「市」） */
   name: string;
   /** 短名，例：板橋店 */
   short: string;
@@ -27,7 +27,7 @@ export type Store = {
 
 export const STORES: Store[] = [
   {
-    slug: 'wugu', name: '新北市五股店', short: '五股店', district: '五股', region: '新北市',
+    slug: 'wugu', name: '新北五股店', short: '五股店', district: '五股', region: '新北市',
     street: '五股區新五路二段341號', addr: '新北市五股區新五路二段 341 號',
     area: '新北市全區，五股、蘆洲、泰山、林口、八里為主', served: ['新北市', '五股區', '蘆洲區', '泰山區', '林口區', '八里區', '三重區', '新莊區'],
     intro: [
@@ -37,7 +37,7 @@ export const STORES: Store[] = [
     lat: 25.087620, lng: 121.443702,
   },
   {
-    slug: 'dongmen', name: '台北市東門店', short: '東門店', district: '台北市', region: '台北市',
+    slug: 'dongmen', name: '台北東門店', short: '東門店', district: '台北市', region: '台北市',
     street: '中正區信義路二段129號2樓', addr: '台北市中正區信義路二段 129 號 2 樓',
     area: '台北市全區，大安、中正、信義、中山、松山、南港、內湖為主', served: ['台北市', '大安區', '中正區', '信義區', '中山區', '松山區', '南港區', '內湖區', '文山區', '士林區', '北投區'],
     intro: [
@@ -47,7 +47,7 @@ export const STORES: Store[] = [
     lat: 25.034253, lng: 121.527967,
   },
   {
-    slug: 'beitou', name: '台北市北投店', short: '北投店', district: '北投', region: '台北市',
+    slug: 'beitou', name: '台北北投店', short: '北投店', district: '北投', region: '台北市',
     street: '北投區三合街二段447號', addr: '台北市北投區三合街二段 447 號',
     area: '台北市全區，北投、士林、天母、石牌、大同為主', served: ['台北市', '北投區', '士林區', '大同區', '中山區', '內湖區', '新北市', '淡水區'],
     intro: [
@@ -57,7 +57,7 @@ export const STORES: Store[] = [
     lat: 25.126427, lng: 121.502136,
   },
   {
-    slug: 'banqiao', name: '新北市板橋店', short: '板橋店', district: '板橋', region: '新北市',
+    slug: 'banqiao', name: '新北板橋店', short: '板橋店', district: '板橋', region: '新北市',
     street: '板橋區四川路一段268號', addr: '新北市板橋區四川路一段 268 號',
     area: '新北市全區，板橋、中和、永和、土城、樹林為主', served: ['新北市', '板橋區', '中和區', '永和區', '土城區', '樹林區', '新莊區', '三峽區', '鶯歌區'],
     intro: [
