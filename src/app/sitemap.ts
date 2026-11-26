@@ -5,7 +5,7 @@ import { getArticles, articlePath } from '@/lib/articles';
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mrturnkey.com.tw';
 
-// 首頁 + 9 間分店頁 + 每個已發佈作品一個網址；Supabase 新增案子後自動進 sitemap
+// 首頁 + 各分店頁 + 每個已發佈作品一個網址；Supabase 新增案子後自動進 sitemap
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

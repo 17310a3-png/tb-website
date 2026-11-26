@@ -5,7 +5,7 @@ import type { Store } from '@/lib/stores';
 
 /** 首頁門市據點右側的 Google 地圖（Maps JavaScript API）。
  *  - 深色主題用 styles JSON（不需 Map ID），圖釘用品牌黃 SVG
- *  - 9 間店全部放圖釘，`active` 那間放大並置中；點圖釘也會切換左邊清單（onPick）
+ *  - 每間店都放圖釘，`active` 那間放大並置中；點圖釘也會切換左邊清單（onPick）
  *  - 金鑰：NEXT_PUBLIC_GOOGLE_MAPS_KEY（瀏覽器金鑰，referrer 已限官網網域）；沒有金鑰時 Locations 會改用 iframe */
 
 const KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || '';

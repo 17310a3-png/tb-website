@@ -8,7 +8,7 @@ import StoreMap, { mapsEnabled } from './StoreMap';
 /** 門市據點：左邊 9 店清單（點選切換），右邊 Google 地圖跳到該店。
  *  有 NEXT_PUBLIC_GOOGLE_MAPS_KEY 時用 StoreMap（Maps JS API，深色主題 + 黃圖釘），
  *  沒有時退回 Google Maps output=embed 內嵌（免 key）。
- *  店名與地址都是真正的 <a>/文字，Google 抓首頁時看得到 9 間門市與分店頁連結。 */
+ *  店名與地址都是真正的 <a>/文字，Google 抓首頁時看得到全部門市與分店頁連結。 */
 const embedUrl = (addr: string) =>
   `https://maps.google.com/maps?q=${encodeURIComponent('統包先生 ' + addr)}&z=16&hl=zh-TW&output=embed`;
 
