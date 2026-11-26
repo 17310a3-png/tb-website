@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useReveal } from './Reveal';
 import { projectPath, type Project } from '@/lib/projects';
 
 /** 首頁「更多完工案例」橫向捲動卡片。卡片是真正的 <a> 連到 /projects/[slug]，Google 抓首頁時看得到每個案例的連結。 */
@@ -22,26 +23,22 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
       <button type="button" className="proj-arrow proj-arrow-right" aria-label="下一個" onClick={() => scrollByCards(1)}>›</button>
 
       <div className="proj-scroll" ref={trackRef}>
-        {projects.map((p, i) => (
-          <motion.a
-            href={projectPath(p.slug)}
-            className="proj-card"
-            key={p.id}
-            aria-label={`${p.name} 完工案例`}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '0px 0px -40px 0px' }}
-            transition={{ duration: 0.5, delay: Math.min(i, 6) * 0.06, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.cover_url} loading="lazy" alt={p.name} width={800} height={600} />
-            <div className="proj-overlay">
-              <span className="proj-type">{p.category}</span>
-              <span className="proj-name">{p.name}</span>
-            </div>
-          </motion.a>
-        ))}
+        {projects.map((p, i) => <Card key={p.id} p={p} i={i} />)}
       </div>
     </div>
+  );
+}
+
+function Card({ p, i }: { p: Project; i: number }) {
+  const { ref, controls } = useReveal<HTMLAnchorElement>(24, Math.min(i, 6) * 0.06, 0.5);
+  return (
+    <motion.a ref={ref} href={projectPath(p.slug)} className="proj-card" aria-label={`${p.name} 完工案例`} initial={false} animate={controls}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={p.cover_url} loading="lazy" alt={p.name} width={800} height={600} />
+      <div className="proj-overlay">
+        <span className="proj-type">{p.category}</span>
+        <span className="proj-name">{p.name}</span>
+      </div>
+    </motion.a>
   );
 }

@@ -92,10 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh-TW" className={`${notoSansTC.variable} ${bebasNeue.variable} ${barlowCondensed.variable}`}>
       <body>
         <GoogleTagManagerNoScript />
-        {/* 無 JS 時 framer-motion 的 SSR 初始 opacity:0 會讓內容隱形，noscript 強制可見 */}
-        <noscript>
-          <style>{`[style*="opacity:0"], [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; } .hero-bg-logo { opacity: 0.05 !important; }`}</style>
-        </noscript>
+        <a href="#main" className="skip-link">跳到主要內容</a>
         <MotionProvider>{children}</MotionProvider>
         <GoogleTagManager />
         <GoogleAds />

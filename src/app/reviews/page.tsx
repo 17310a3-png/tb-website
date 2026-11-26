@@ -44,7 +44,7 @@ export default async function ReviewsPage() {
     <>
       <FloatCta />
       <Nav />
-      <main className="pp">
+      <main id="main" className="pp">
         <header className="pp-head">
           <Reveal>
             <div className="pp-crumb" role="navigation" aria-label="麵包屑">
@@ -52,7 +52,7 @@ export default async function ReviewsPage() {
               <span>客戶評價</span>
             </div>
           </Reveal>
-          <Reveal className="eyebrow"><span className="eyebrow-text">Reviews</span></Reveal>
+          
           <Reveal><h1 className="pp-title">裝修過的客戶，<br />怎麼說統包先生</h1></Reveal>
         </header>
 

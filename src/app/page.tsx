@@ -34,6 +34,7 @@ export default async function Home() {
     <>
       <FloatCta />
       <Nav />
+      <main id="main">
       <Hero />
       <NumbersStrip />
       <About />
@@ -44,6 +45,7 @@ export default async function Home() {
       <Locations />
       <Faq />
       <Contact />
+      </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>

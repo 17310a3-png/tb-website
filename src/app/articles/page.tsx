@@ -32,7 +32,7 @@ export default function ArticlesPage() {
     <>
       <FloatCta />
       <Nav />
-      <main className="pp">
+      <main id="main" className="pp">
         <header className="pp-head">
           <Reveal>
             <div className="pp-crumb" role="navigation" aria-label="麵包屑">
@@ -40,7 +40,7 @@ export default function ArticlesPage() {
               <span>裝修知識</span>
             </div>
           </Reveal>
-          <Reveal className="eyebrow"><span className="eyebrow-text">Articles</span></Reveal>
+          
           <Reveal><h1 className="pp-title">裝修知識</h1></Reveal>
           <Reveal>
             <p className="pp-meta"><span>{articles.length} 篇</span><span>合約、預算、水電、木工、驗收、選材，簽約前和開工前要知道的事</span></p>

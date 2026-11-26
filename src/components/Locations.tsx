@@ -20,7 +20,7 @@ export default function Locations() {
     <section id="locations">
       <div className="locations-head">
         <div>
-          <Reveal className="eyebrow"><span className="eyebrow-text">Locations</span></Reveal>
+          
           <Reveal><h2 className="section-title">裝修門市據點</h2><p className="section-sub">把服務做近，也把標準做穩</p></Reveal>
         </div>
         <Reveal>

@@ -7,14 +7,14 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
   const rest = projects.filter((p) => p.id !== featured?.id);
 
   return (
-    <section id="portfolio" style={{ background: 'var(--black)', padding: '120px 56px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, gap: 32, flexWrap: 'wrap' }}>
-        <div>
-          <Reveal className="eyebrow"><span className="eyebrow-text">Portfolio</span></Reveal>
-          <Reveal><h2 className="section-title">室內裝修完工案例</h2><p className="section-sub">需求被聽懂，才會變成好用的家</p></Reveal>
-        </div>
+    <section id="portfolio">
+      <div className="pf-head">
         <Reveal>
-          <p className="section-body" style={{ fontSize: '0.88rem', maxWidth: 320 }}>
+          <h2 className="section-title">室內裝修完工案例</h2>
+          <p className="section-sub">需求被聽懂，才會變成好用的家</p>
+        </Reveal>
+        <Reveal>
+          <p className="section-body">
             {projects.length} 個完工現場，照片都是交屋時拍的。點進去看地點、風格和這個案子做了什麼。
           </p>
         </Reveal>
@@ -23,10 +23,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
       {featured && (
         <>
           <Reveal>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
-              <div style={{ width: 3, height: 20, background: 'var(--yellow)' }} />
-              <span style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.78rem', color: 'var(--yellow)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>Featured Case</span>
-              <span style={{ fontSize: '0.85rem', color: 'var(--light-gray)' }}>{featured.name}{featured.style ? `｜${featured.style}` : ''}</span>
+            <div className="pf-label">
+              <span className="pf-label-title">主打案例</span>
+              <span className="pf-label-sub">{featured.name}{featured.style ? `｜${featured.style}` : ''}</span>
               <a href={projectPath(featured.slug)} className="pf-more-link">查看完整案例 →</a>
             </div>
           </Reveal>
@@ -43,23 +42,23 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
 
           {featured.images.length > 2 && (
             <Reveal y={0}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 4 }} className="pf-feature-bottom">
+              <div className="pf-feature-bottom">
                 {featured.images.slice(2, 6).map((src, i) => (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img key={i} src={src} loading="lazy" alt={`${featured.name} 細節 ${i + 1}`} style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', display: 'block' }} />
+                  <img key={i} src={src} loading="lazy" alt={`${featured.name} 細節 ${i + 1}`} />
                 ))}
               </div>
             </Reveal>
           )}
 
           <Reveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 1, background: 'var(--border)', marginTop: 32 }} className="pf-spec">
-              <SpecCell label="TYPE" value={featured.category} />
-              <SpecCell label="STYLE" value={featured.style ?? '—'} />
-              <SpecCell label="LOCATION" value={featured.location ?? '—'} />
-              <div style={{ background: 'var(--near-black)', padding: '24px 28px' }}>
-                <div style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.7rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 8, fontWeight: 600 }}>CONTACT</div>
-                <a href={projectPath(featured.slug)} style={{ fontSize: '0.9rem', color: 'var(--yellow)', fontWeight: 700, textDecoration: 'none' }}>看這個案子 →</a>
+            <div className="pf-spec">
+              <SpecCell label="類型" value={featured.category} />
+              <SpecCell label="風格" value={featured.style ?? '—'} />
+              <SpecCell label="地點" value={featured.location ?? '—'} />
+              <div className="pf-spec-cell">
+                <div className="pf-spec-label">案例</div>
+                <a href={projectPath(featured.slug)} className="pf-spec-link">看這個案子 →</a>
               </div>
             </div>
           </Reveal>
@@ -69,11 +68,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
       {rest.length > 0 && (
         <>
           <Reveal>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '72px 0 28px' }}>
-              <div style={{ width: 3, height: 20, background: 'var(--yellow)' }} />
-              <span style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.78rem', color: 'var(--yellow)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>More Projects</span>
-              <span style={{ fontSize: '0.85rem', color: 'var(--light-gray)' }}>更多完工案例</span>
-              <span style={{ marginLeft: 'auto', fontSize: '0.78rem', color: 'var(--gray)', whiteSpace: 'nowrap' }}>← 左右滑動，點卡片看完整案例 →</span>
+            <div className="pf-label pf-more">
+              <span className="pf-label-title">更多完工案例</span>
+              <span className="pf-label-hint">← 左右滑動，點卡片看完整案例 →</span>
             </div>
           </Reveal>
           <PortfolioGrid projects={rest} />
@@ -81,8 +78,8 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
       )}
 
       <Reveal>
-        <div style={{ textAlign: 'center', marginTop: 56, padding: 48, border: '1px solid var(--border)' }}>
-          <div style={{ fontSize: '1rem', color: 'var(--light-gray)', marginBottom: 24, lineHeight: 1.8 }}>
+        <div className="pf-cta">
+          <div className="pf-cta-text">
             喜歡這樣的風格或格局思路？<br />
             歡迎預約諮詢，我們依照你的房屋條件，提出更適合的規劃建議。
           </div>
@@ -95,9 +92,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
 
 function SpecCell({ label, value }: { label: string; value: string }) {
   return (
-    <div style={{ background: 'var(--near-black)', padding: '24px 28px' }}>
-      <div style={{ fontFamily: "var(--font-barlow),'Barlow Condensed',sans-serif", fontSize: '0.7rem', color: 'var(--yellow)', letterSpacing: '0.25em', marginBottom: 8, fontWeight: 600 }}>{label}</div>
-      <div style={{ fontSize: '0.9rem', color: 'var(--white-pure)', fontWeight: 700 }}>{value}</div>
+    <div className="pf-spec-cell">
+      <div className="pf-spec-label">{label}</div>
+      <div className="pf-spec-value">{value}</div>
     </div>
   );
 }

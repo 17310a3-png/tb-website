@@ -5,7 +5,7 @@ export default function ProjectNotFound() {
   return (
     <>
       <Nav />
-      <main className="pp" style={{ minHeight: '60vh' }}>
+      <main id="main" className="pp" style={{ minHeight: '60vh' }}>
         <header className="pp-head">
           <div className="eyebrow"><span className="eyebrow-text">404</span></div>
           <h1 className="pp-title">找不到這個案例</h1>

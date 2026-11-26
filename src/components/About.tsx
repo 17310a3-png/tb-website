@@ -25,7 +25,6 @@ export default function About() {
       </Reveal>
 
       <Reveal>
-        <div className="eyebrow"><span className="eyebrow-text">About Us</span></div>
         <h2 className="section-title">住宅全室裝修統包</h2>
         <p className="section-sub">裝修不只是完成空間</p>
         <p className="section-body">

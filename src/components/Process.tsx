@@ -16,7 +16,7 @@ export default function Process() {
     <section id="process">
       <div className="process-bg-word">FLOW</div>
       <Reveal className="process-head">
-        <div className="eyebrow"><span className="eyebrow-text">Our Process</span></div>
+        
         <h2 className="section-title">裝修流程 8 個步驟</h2>
         <p className="section-sub">好的裝修，過程一樣清楚</p>
         <p className="section-body" style={{ margin: '0 auto', textAlign: 'center' }}>

@@ -85,7 +85,7 @@ export default async function ProjectPage({ params }: Params) {
       <FloatCta />
       <Nav />
 
-      <main className="pp">
+      <main id="main" className="pp">
         <header className="pp-head">
           <Reveal>
             {/* 用 div 不用 <nav>：globals.css 的 nav 選擇器是 position:fixed 的主選單樣式 */}
@@ -146,7 +146,7 @@ export default async function ProjectPage({ params }: Params) {
           <section className="pp-related" aria-label="更多案例">
             <Reveal>
               <div className="pp-related-head">
-                <div className="eyebrow" style={{ marginBottom: 0 }}><span className="eyebrow-text">More Projects</span></div>
+                <div className="eyebrow" style={{ marginBottom: 0 }}><span className="eyebrow-text">更多完工案例</span></div>
                 <a href="/#portfolio" className="pp-related-all">看全部案例 →</a>
               </div>
             </Reveal>

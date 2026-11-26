@@ -15,7 +15,7 @@ export default function Services() {
     <section id="services">
       <div className="services-head">
         <div>
-          <Reveal className="eyebrow"><span className="eyebrow-text">Services</span></Reveal>
+          
           <Reveal><h2 className="section-title">室內裝修服務項目</h2><p className="section-sub">從規劃到驗收，整合你需要的每一環</p></Reveal>
         </div>
         <Reveal>
@@ -28,17 +28,14 @@ export default function Services() {
       <div className="services-grid">
         {SERVICES.map(([num, title, desc], i) => (
           <Reveal className="service-card" key={num} delay={(i % 3) * 0.08}>
-            <div className="service-num">{num}</div>
             <div className="service-title">{title}</div>
             <p className="service-desc">{desc}</p>
-            <span className="service-tag">→ 了解更多</span>
           </Reveal>
         ))}
       </div>
 
       <div className="trades">
         <Reveal className="trades-head">
-          <div className="eyebrow"><span className="eyebrow-text">Trades</span></div>
           <h3 className="trades-title">全室裝修工程項目</h3>
           <p className="section-body" style={{ fontSize: '0.88rem' }}>
             全室裝修涉及的各項工程，由統包先生統一發包、排程與現場管理。你只需要面對一個窗口。

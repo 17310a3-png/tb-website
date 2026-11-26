@@ -10,9 +10,11 @@ export default function Contact() {
       <div className="contact-corner" />
       <div className="contact-layout">
         <Reveal>
-          <div className="eyebrow"><span className="eyebrow-text">Contact</span></div>
           <h2 className="contact-tagline">預約裝修諮詢</h2>
           <p className="section-sub">把你的需求告訴我們，剩下的交給我們</p>
+          <p className="section-body contact-left-body">
+            填完表單後，會依房屋所在地交給就近門市，由專人和你聯絡，約時間看屋或到店談。
+          </p>
           {LINE_URL && (
             <ConversionLink source="line-contact" className="contact-line-cta" href={LINE_URL} target="_blank" rel="noopener noreferrer">
               <div className="line-icon" aria-hidden="true">

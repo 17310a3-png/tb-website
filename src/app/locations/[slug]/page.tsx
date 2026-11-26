@@ -91,7 +91,7 @@ export default async function StorePage({ params }: Params) {
       <FloatCta />
       <Nav />
 
-      <main className="pp">
+      <main id="main" className="pp">
         <header className="pp-head">
           <Reveal>
             <div className="pp-crumb" role="navigation" aria-label="麵包屑">
@@ -100,7 +100,7 @@ export default async function StorePage({ params }: Params) {
               <span>{s.name}</span>
             </div>
           </Reveal>
-          <Reveal className="eyebrow"><span className="eyebrow-text">{s.region} · Location</span></Reveal>
+          <Reveal className="eyebrow"><span className="eyebrow-text">{s.region}門市</span></Reveal>
           <Reveal><h1 className="pp-title">{s.district}室內裝修<br />統包先生{s.short}</h1></Reveal>
           <Reveal>
             <p className="pp-meta">
@@ -176,7 +176,7 @@ export default async function StorePage({ params }: Params) {
         </Reveal>
 
         <section className="sp-others" aria-label="其他門市">
-          <Reveal><div className="eyebrow"><span className="eyebrow-text">Other Locations</span></div></Reveal>
+          <Reveal><div className="eyebrow"><span className="eyebrow-text">其他門市</span></div></Reveal>
           <div className="sp-others-list">
             {others.map((o) => (
               <a key={o.slug} href={storePath(o.slug)} className="sp-other">

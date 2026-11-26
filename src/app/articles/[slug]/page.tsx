@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }: Params) {
     <>
       <FloatCta />
       <Nav />
-      <main className="pp art">
+      <main id="main" className="pp art">
         <header className="pp-head">
           <Reveal>
             <div className="pp-crumb" role="navigation" aria-label="麵包屑">
