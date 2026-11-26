@@ -25,7 +25,7 @@ export default function Locations() {
         </div>
         <Reveal>
           <p className="section-body" style={{ fontSize: '0.88rem', maxWidth: 360 }}>
-            {STORES.length} 間門市，服務雙北、桃園、新竹、台中。各店做法與標準相同，就近到店談最快。
+            {STORES.length} 間門市，服務雙北、桃園、新竹、台中、台南。各店做法與標準相同，就近到店談最快。
           </p>
         </Reveal>
       </div>

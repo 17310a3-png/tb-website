@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: '%s｜統包先生 MR.TURNKEY',
   },
   description:
-    '統包先生承接室內裝修、室內設計、新成屋裝修、舊屋翻新與商業空間的全室統包。水電、木作、泥作、衛浴、廚具、鋁窗、地板由同一窗口負責。雙北、桃園、新竹、台中共 8 間門市。',
+    `統包先生承接室內裝修、室內設計、新成屋裝修、舊屋翻新與商業空間的全室統包。水電、木作、泥作、衛浴、廚具、鋁窗、地板由同一窗口負責。雙北、桃園、新竹、台中、台南共 ${STORES.length} 間門市。`,
   alternates: { canonical: '/' },
   icons: {
     icon: [
@@ -81,7 +81,7 @@ const jsonLd = {
   logo: `${SITE}/assets/logo/mark-white.png`,
   image: `${SITE}/assets/og-image.jpg`,
   priceRange: '$$',
-  areaServed: ['台北市', '新北市', '桃園市', '新竹市', '新竹縣', '台中市'],
+  areaServed: ['台北市', '新北市', '桃園市', '新竹市', '新竹縣', '台中市', '台南市'],
   knowsAbout: ['室內裝修', '室內設計', '裝潢', '新成屋裝修', '舊屋翻新', '商業空間', '預售屋客變', '工程發包管理', '水電工程', '木作工程', '泥作磁磚', '油漆', '鋁窗隔音窗', '衛浴翻新', '廚具更換', '木地板', '拆除清運', '軟裝'],
   department: STORES.map((s) => ({ '@type': 'HomeAndConstructionBusiness', name: `統包先生 ${s.name}`, url: `${SITE}${storePath(s.slug)}`, address: { '@type': 'PostalAddress', addressCountry: 'TW', addressRegion: s.region, streetAddress: s.street } })),
 
